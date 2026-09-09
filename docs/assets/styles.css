@@ -193,7 +193,7 @@ small, .small { font-size: .875rem; line-height: 1.55; }
   .wrap { width: calc(100% - 2rem); }
   .brand-note { font-size: .75rem; max-width: 9rem; }
   .main-nav { gap: .1rem 1rem; }
-  .main-nav a { font-size: .8125rem; }
+  .main-nav a { font-size: .875rem; }
   .action-heading { padding: 1.1rem .8rem; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }

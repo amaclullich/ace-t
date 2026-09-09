@@ -36,7 +36,8 @@ for (const [name, text] of html) {
   }
   assert(!/<(?:iframe|form|input)\b/i.test(text), `${name}: no third-party embeds or patient-data input`);
   for (const resource of text.matchAll(/(?:src|href)="(https:\/\/[^\"]+\.(?:js|css))"/g)) {
-    assert(resource[1].startsWith('https://amaclullich.github.io/ace-t/'), `${name}: no third-party runtime dependencies`);
+    const canonical = text.match(/rel="canonical" href="([^"]+)"/)[1];
+    assert.equal(new URL(resource[1]).origin, new URL(canonical).origin, `${name}: no third-party runtime dependencies`);
   }
   assert(!/positive screen is not a confirmed diagnosis|treatment after detection, not prevention/i.test(text), `${name}: requested removals`);
   assert(!/\/Users\/|\.docx|HOLD BEFORE|TODO|Lorem ipsum/.test(text), `${name}: no private files or placeholders`);
