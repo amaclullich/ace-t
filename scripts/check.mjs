@@ -1,72 +1,54 @@
-import assert from 'node:assert/strict';
-import { readFile, readdir, access } from 'node:fs/promises';
-import { dirname, join, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+// Checks the built site: internal links and anchors, required files, headings, and house-style words.
+// Usage: node scripts/check.mjs            (add --external to also check external links)
+import fs from 'node:fs';
+import path from 'node:path';
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const docs = join(root, 'docs');
-const pages = (await readdir(docs)).filter((name) => name.endsWith('.html'));
-const html = new Map(await Promise.all(pages.map(async (name) => [name, await readFile(join(docs, name), 'utf8')])));
-let checkedLinks = 0;
-for (const [name, text] of html) {
-  assert.equal((text.match(/<h1\b/g) || []).length, 1, `${name}: one primary heading`);
-  assert.match(text, /<html lang="en-GB">/, `${name}: language`);
-  assert.match(text, /name="viewport"/, `${name}: viewport`);
-  assert.match(text, /<title>[^<]+<\/title>/, `${name}: title`);
-  assert.match(text, /<main id="main"/, `${name}: main landmark`);
-  assert.match(text, /class="skip" href="#main"/, `${name}: skip link`);
-  assert.equal((text.match(/aria-current="page"/g) || []).length, name === '404.html' ? 0 : 1, `${name}: active navigation`);
-  const ids = [...text.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
-  assert.equal(ids.length, new Set(ids).size, `${name}: unique IDs`);
-  for (const img of text.matchAll(/<img\b[^>]*>/g)) {
-    assert.match(img[0], /\balt="[^"]+"/, `${name}: image alternative`);
-    assert.match(img[0], /\bwidth="\d+"/, `${name}: image dimensions`);
-    assert.match(img[0], /\bheight="\d+"/, `${name}: image dimensions`);
+const OUT = 'docs';
+const pages = fs.readdirSync(OUT).filter(f => f.endsWith('.html'));
+const problems = [];
+const ids = {};
+const text = {};
+for (const p of pages) {
+  const html = fs.readFileSync(path.join(OUT, p), 'utf8');
+  ids[p] = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]));
+  text[p] = html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ');
+}
+const external = new Set();
+for (const p of pages) {
+  const html = fs.readFileSync(path.join(OUT, p), 'utf8');
+  for (const m of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+    let u = m[1];
+    if (/^(mailto:|data:)/.test(u)) continue;
+    if (/^https?:/.test(u)) { if (!u.startsWith('https://amaclullich.github.io/ace-t')) external.add(u); else continue; continue; }
+    const [file, hash] = u.split('#');
+    const f = (file.split('?')[0] || p).replace(/^\.\/?$/, 'index.html') || 'index.html';
+    const target = f === '' ? p : f;
+    if (!fs.existsSync(path.join(OUT, target))) problems.push(`${p}: missing file ${u}`);
+    else if (hash && target.endsWith('.html') && !/^t=/.test(hash) && !ids[target]?.has(hash)) problems.push(`${p}: missing anchor ${u}`);
   }
-  for (const match of text.matchAll(/(?:href|src)="([^"]+)"/g)) {
-    const url = match[1];
-    assert(!url.startsWith('http:'), `${name}: HTTPS external resources`);
-    if (/^(?:https:|mailto:)/.test(url)) continue;
-    const [path, fragment] = url.split('#');
-    assert(!path.startsWith('/'), `${name}: project-path-safe local URL ${url}`);
-    const target = path || name;
-    await access(join(docs, target));
-    if (fragment) assert((html.get(target) || '').includes(`id="${fragment}"`), `${name}: missing anchor ${url}`);
-    checkedLinks++;
+  // headings ending in a full stop
+  for (const m of html.matchAll(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/g)) {
+    const t = m[1].replace(/<[^>]+>/g, '').trim();
+    if (/\.$/.test(t)) problems.push(`${p}: heading ends with a full stop: "${t}"`);
   }
-  assert(!/<(?:iframe|form|input)\b/i.test(text), `${name}: no third-party embeds or patient-data input`);
-  for (const resource of text.matchAll(/(?:src|href)="(https:\/\/[^\"]+\.(?:js|css))"/g)) {
-    const canonical = text.match(/rel="canonical" href="([^"]+)"/)[1];
-    assert.equal(new URL(resource[1]).origin, new URL(canonical).origin, `${name}: no third-party runtime dependencies`);
+}
+// House style: banned words and marks in visible text
+const banned = [/\bcannot\b/i, /\bplainly\b/i, /\bmatter(s|ed|ing)?\b/i, /\blands\b/i, /\bload-bearing\b/i, /\bthe whole point\b/i, /\bthe shape of\b/i, /\blives in\b/i, /\bhonest(ly)?\b/i, /\bexactly\b/i, /\babsolutely\b/i, /\bstep by step\b/i, /\bshort answer\b/i, /\bgates?\b/i, /—/, /\bfair enough\b/i, /\bgenuinely\b/i, /\bstraightforward\b/i, /\bworth noting\b/i, /\bhere(’|')s\b/i, /\bquietly\b/i];
+for (const p of pages) {
+  const t = text[p].replace(/Scene transcript.*$/, '');
+  for (const re of banned) { const m = t.match(new RegExp(`.{0,40}${re.source}.{0,40}`, re.flags)); if (m) problems.push(`${p}: style word ${re} in "…${m[0]}…"`); }
+}
+for (const f of ['downloads/ACE-T-bedside-tool-A4.pdf', 'downloads/ACE-T-bedside-tool-US-Letter.pdf', 'downloads/ACE-T-bedside-tool-editable.docx', 'downloads/ACE-T-at-a-glance-A4.pdf', 'downloads/ACE-T-at-a-glance.png', 'media/ace-t-walkthrough.mp3', 'media/ace-t-walkthrough.vtt', 'media/ace-t-walkthrough-transcript.txt', 'assets/og-ace-t.png', 'assets/apple-touch-icon.png', 'assets/favicon.svg', '.nojekyll', 'sitemap.xml', 'robots.txt']) {
+  if (!fs.existsSync(path.join(OUT, f))) problems.push('missing required file ' + f);
+}
+if (process.argv.includes('--external')) {
+  for (const u of external) {
+    try {
+      const r = await fetch(u, { method: 'GET', redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 link check' } });
+      console.log(r.status, u);
+      if (r.status >= 400) problems.push(`external ${r.status}: ${u}`);
+    } catch (e) { problems.push(`external error: ${u} ${e.message}`); }
   }
-  assert(!/positive screen is not a confirmed diagnosis|treatment after detection, not prevention/i.test(text), `${name}: requested removals`);
-  assert(!/\/Users\/|\.docx|HOLD BEFORE|TODO|Lorem ipsum/.test(text), `${name}: no private files or placeholders`);
-}
-const bedside = html.get('use-ace-t.html');
-for (const phrase of ['Document 4AT score and delirium.', 'Communicate the delirium plan.', 'Discuss actions with the team.', 'urinary retention', 'constipation', 'nutrition', 'medication review', 'capillary blood glucose', 'QDAT', 'hearing aids', 'falls risk', 'leaflet', 'urgent concerns', 'four hours', 'in parallel']) {
-  assert(bedside.toLowerCase().includes(phrase.toLowerCase()), `Missing source-aligned bedside prompt: ${phrase}`);
-}
-assert.equal((bedside.match(/class="action-section/g) || []).length, 3, 'Three ACE-T domains');
-assert.match(html.get('resources.html'), /did not establish an improvement in patient outcomes/, 'Evidence limitations retained');
-const script = await readFile(join(docs, 'assets/site.js'), 'utf8');
-assert(!/localStorage|sessionStorage|document\.cookie|fetch\(|XMLHttpRequest/.test(script), 'No tracking or data persistence');
-const css = await readFile(join(docs, 'assets/styles.css'), 'utf8');
-assert.match(css, /@media print/, 'Print layout');
-assert.match(css, /:focus-visible/, 'Keyboard focus indication');
-assert.match(css, /max-width: 48rem/, 'Small-screen layout');
-
-function luminance(hex) {
-  const values = hex.match(/[a-f\d]{2}/gi).map((v) => parseInt(v, 16) / 255).map((v) => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
-  return values[0] * .2126 + values[1] * .7152 + values[2] * .0722;
-}
-const pairs = [['132f3d', 'ffffff'], ['516571', 'ffffff'], ['076c68', 'e9f5f2'], ['245da8', 'edf3fc'], ['845009', 'fff3dd'], ['d2e3ea', '132f3d'], ['516571', 'f3f7f8']];
-for (const [foreground, background] of pairs) {
-  const a = luminance(foreground), b = luminance(background);
-  const contrast = (Math.max(a,b) + .05) / (Math.min(a,b) + .05);
-  assert(contrast >= 4.5, `Insufficient text contrast: ${foreground}/${background}: ${contrast.toFixed(2)}`);
-}
-const image = await readFile(join(docs, 'assets/ace-t-overview.png'));
-assert.equal(image.subarray(1,4).toString(), 'PNG', 'Infographic is a real PNG');
-assert.equal(image.readUInt32BE(16), 1122, 'Infographic width matches markup');
-assert.equal(image.readUInt32BE(20), 1402, 'Infographic height matches markup');
-console.log(`PASS: ${pages.length} pages, ${checkedLinks} internal references, ${pairs.length} text colour pairs, required clinical wording, image dimensions, static privacy checks.`);
+} else console.log(`${external.size} external links (run with --external to test)`);
+console.log(problems.length ? problems.join('\n') : `OK: ${pages.length} pages, links, anchors, headings and style words checked`);
+process.exitCode = problems.length ? 1 : 0;

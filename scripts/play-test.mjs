@@ -1,0 +1,30 @@
+// Plays the walkthrough in Chromium and checks that time, scenes, prompts, captions and chapters stay in step.
+import { chromium } from 'playwright';
+const base = process.env.BASE || 'http://127.0.0.1:8124/';
+const b = await chromium.launch({ args: ['--autoplay-policy=no-user-gesture-required'] });
+const p = await b.newPage();
+const errs = []; p.on('pageerror', e => errs.push(e.message));
+await p.goto(base + 'walkthrough.html', { waitUntil: 'networkidle' });
+const state = () => p.evaluate(() => {
+  const a = document.querySelector('audio');
+  const act = [...document.querySelectorAll('.scene')].findIndex(s => s.classList.contains('active'));
+  const on = document.querySelectorAll('.scene.active .scene-prompts li.on').length;
+  return { t: +a.currentTime.toFixed(2), paused: a.paused, scene: act, promptsOn: on, cap: document.querySelector('.captionbar .cap').textContent, chapter: [...document.querySelectorAll('.chapters button')].findIndex(x => x.getAttribute('aria-current') === 'true'), time: document.querySelector('.time').textContent };
+});
+await p.click('.stage-start');
+await p.waitForTimeout(9000);
+console.log('after 9 s play:', await state());
+await p.click('.chapters li:nth-child(5) button');
+await p.waitForTimeout(4000);
+console.log('chapter 5 + 4 s:', await state());
+await p.focus('.player');
+await p.keyboard.press(' ');
+await p.waitForTimeout(500);
+console.log('space pressed:', await state());
+await p.click('.ctl.cc');
+console.log('captions hidden:', await p.evaluate(() => document.querySelector('.captionbar').hidden));
+await p.click('.transcript p:nth-child(12)');
+await p.waitForTimeout(2500);
+console.log('transcript para 12 + 2.5 s:', await state());
+console.log(errs.length ? errs : 'no page errors');
+await b.close();

@@ -1,10 +1,24 @@
 {
-  "name": "ace-t-delirium",
-  "version": "1.0.0",
+  "name": "ace-t-website",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
+  "description": "ACE-T: a nurse-focused tool for the first hours after a positive delirium screen. Static website for GitHub Pages.",
   "scripts": {
     "build": "node build.mjs",
-    "check": "node scripts/check.mjs"
+    "downloads": "node scripts/make-downloads.mjs",
+    "check": "node scripts/check.mjs",
+    "check:external": "node scripts/check.mjs --external",
+    "serve": "node scripts/serve.mjs docs 8123",
+    "a11y": "node scripts/a11y.mjs",
+    "test:player": "node scripts/play-test.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.0",
+    "d3-geo": "^3.1.1",
+    "docx": "^9.5.0",
+    "playwright": "^1.56.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   }
 }
