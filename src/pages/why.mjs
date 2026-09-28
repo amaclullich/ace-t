@@ -3,13 +3,13 @@ import { bars } from '../art/charts.mjs';
 
 export default {
   key: 'why', path: 'why-ace-t.html', title: 'Why ACE-T',
-  description: 'Why a nurse-focused tool for the first hours after a positive delirium screen was needed, what ACE-T gives nurses, what staff said about it, and where the 4AT fits.',
+  description: 'Why a nurse-focused tool for the first hours after a positive delirium screen was needed, the nursing actions it includes, what staff said about it, and where the 4AT fits.',
   body: () => `
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">Why ACE-T</p>
     <h1>The gap after the screen</h1>
-    <p class="lede">Tools for detecting delirium are well established. What should happen in the first hours after a positive screen, and who should do it, has been far less clearly defined. ACE-T sets out the nursing part of that response.</p>
+    <p class="lede">Tools for detecting delirium are well established. What should happen in the first hours after a positive screen, and who should do it, has been far less clearly defined. ACE-T describes the nursing part of that response.</p>
   </div>
 </section>
 
@@ -19,15 +19,15 @@ export default {
       <h2 style="font-size:1.6rem">Delirium is common and serious</h2>
       <p>Delirium is a sudden change in attention and thinking that develops over hours or days and often fluctuates. Some people become agitated; others become quiet and drowsy, which is easier to miss.</p>
       <p>About 20 to 30% of people on hospital medical wards have delirium. Compared with people who do not develop it, people with delirium are more likely to stay longer in hospital, to have falls and pressure sores, to need long-term care, to have a higher incidence of dementia, and to die.</p>
-      <p class="muted" style="font-size:.9rem;margin:0">Source: NICE guideline CG103, context section.</p>
+      <p class="muted" style="font-size:.9rem;margin:0">Source: <a href="https://www.nice.org.uk/guidance/cg103/chapter/Context">NICE guideline CG103, context section</a>.</p>
     </div>
     <div class="card">
       <h2 style="font-size:1.6rem">Treatment advice varies</h2>
-      <p>Guidelines describe delirium treatment under several different labels:</p>
+      <p>The ACE-T manuscript’s review identified several labels for delirium treatment in guidelines:</p>
       <ul class="labels-list" aria-label="Labels used in guidelines">
         <li>multicomponent non-pharmacological interventions</li><li>a multicomponent program</li><li>non-drug strategies</li><li>established pathways of good care</li>
       </ul>
-      <p>The content ranges from two brief recommendations to a programme of 15 components. Most guidelines do not say which professional group is responsible for which action. The few that assign roles still do not set out the order or timing of nursing actions in the hours after a positive screen.</p>
+      <p>The content ranges from two brief recommendations to a programme of 15 components. Most guidelines do not say which professional group is responsible for which action. The few that assign roles still do not specify the order or timing of nursing actions in the hours after a positive screen.</p>
     </div>
   </div>
 </section>
@@ -37,8 +37,8 @@ export default {
     <div>
       <p class="eyebrow">Why nurses</p>
       <h2 id="nurses-h">Nurses are there when the screen is positive</h2>
-      <p>In many health systems, nurses carry out most delirium screening. That puts them in the best position to respond as soon as a screen is positive, and to bring in the rest of the team.</p>
-      <p>Nurses also carry much of the ongoing care of a person with delirium: managing interventions, monitoring distress, talking with families and keeping the person safe. Studies have found gaps in escalation and action after positive screens, and in telling patients and families about the diagnosis.</p>
+      <p>In many health systems, nurses carry out most delirium screening. They can respond promptly to a positive screen and involve the rest of the team.</p>
+      <p>Nurses also carry much of the ongoing care of a person with delirium: managing interventions, monitoring distress, talking with families and keeping the person safe. Studies reviewed in the ACE-T manuscript reported gaps in escalation and action after positive screens, and in telling patients and families about the diagnosis. <a href="about.html#source">Source and publication status</a>.</p>
       <p>ACE-T gives nurses a practical, shared starting point for those first hours. Medical assessment and the wider team’s work continue alongside it.</p>
     </div>
     <div class="card" style="padding:28px">
@@ -58,8 +58,8 @@ export default {
 <section class="section section-card" aria-labelledby="gives-h">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Benefits</p>
-      <h2 id="gives-h">What ACE-T gives you</h2>
+      <p class="eyebrow">Content and use</p>
+      <h2 id="gives-h">What the form includes</h2>
     </div>
     <div class="feature-grid">
       <div class="feature"><div class="feature-icon">${icon('compass')}</div><h3>A clear place to start</h3><p>When the screen is positive, you know what to look at first, on one page, without searching through a long protocol.</p></div>
@@ -70,7 +70,7 @@ export default {
       <div class="feature"><div class="feature-icon">${icon('clock')}</div><h3>A shared time frame</h3><p>Four hours to complete, start or escalate what applies, with urgent concerns acted on at once.</p></div>
       <div class="feature"><div class="feature-icon">${icon('layers')}</div><h3>Works with your screening tool</h3><p>Use it after a positive 4AT, CAM or other locally used tool. Record whichever score your service uses.</p></div>
       <div class="feature"><div class="feature-icon">${icon('sliders')}</div><h3>Adaptable</h3><p>The editable Word version lets services match local wording, roles and documentation.</p></div>
-      <div class="feature"><div class="feature-icon">${icon('shield')}</div><h3>Clear about scope</h3><p>ACE-T supports nursing judgement and local policy. It sits alongside medical assessment and the wider team.</p></div>
+      <div class="feature"><div class="feature-icon">${icon('shield')}</div><h3>Clear about scope</h3><p>ACE-T supports nursing judgement and local policy. Use it with medical assessment and care from the wider team.</p></div>
     </div>
   </div>
 </section>
@@ -105,9 +105,9 @@ export default {
     <div id="the-4at">
       <p class="eyebrow">Where the 4AT fits</p>
       <h2>Detect with the 4AT, respond with ACE-T</h2>
-      <p>The 4AT is a short bedside test for delirium. Its four items cover <strong>A</strong>lertness, the <strong>A</strong>MT4 (age, date of birth, place and year), <strong>A</strong>ttention (months of the year backwards) and <strong>A</strong>cute change or fluctuating course. It does not need special training.</p>
-      <p>A score of 4 or more suggests delirium. A score of 1 to 3 suggests cognitive impairment but not delirium, and 0 suggests no delirium and no moderate to severe cognitive impairment. A positive 4AT should lead to clinical assessment and, with ACE-T, to a nursing response.</p>
-      <p>NICE recommends the 4AT for assessing delirium in hospital and long-term care. In critical care, or in the recovery room after surgery, it recommends the CAM-ICU or ICDSC instead.</p>
+      <p>The 4AT is a short bedside test for delirium. Its four items cover <strong>A</strong>lertness, the <strong>A</strong>MT4 (age, date of birth, place and year), <strong>A</strong>ttention (months of the year backwards) and <strong>A</strong>cute change or fluctuating course. Special training is not required, but users need knowledge of delirium.</p>
+      <p>A score of 4 or more suggests possible delirium and needs clinical assessment. Scores of 1 to 3 suggest cognitive impairment. A score of 0 makes delirium or moderate to severe cognitive impairment less likely. A low score does not rule out delirium: assess further if the history or clinical findings raise concern. ACE-T can guide the initial nursing response when delirium is suspected.</p>
+      <p><a href="https://www.nice.org.uk/guidance/cg103/chapter/Recommendations#assessment-and-diagnosis">NICE recommends the 4AT</a> when indicators of delirium are identified in hospital or long-term care. In critical care, or in the recovery room after surgery, it recommends the CAM-ICU or ICDSC instead.</p>
       <a class="link-arrow" href="https://www.the4at.com/userguide" rel="noopener">The official 4AT user guide${icon('arrow')}</a>
     </div>
   </div>

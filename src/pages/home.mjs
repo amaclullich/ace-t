@@ -29,6 +29,7 @@ export default {
         <li>${icon('file')}Free PDF and Word versions</li>
         <li>${icon('pin')}Piloted in Edinburgh, Frankfurt and Stanford</li>
       </ul>
+      <p class="note">Evidence is from an early development pilot. Its effect on patient outcomes has not been established. <a href="story.html#results">Read the results and limitations</a>.</p>
     </div>
     <div class="hero-art">${bedside({ id: 'hero' })}</div>
   </div>
@@ -75,7 +76,7 @@ export default {
     <div class="section-head">
       <p class="eyebrow">Where ACE-T fits</p>
       <h2 id="flow-h">From a positive screen to a shared plan</h2>
-      <p class="lede">Detection tools such as the 4AT tell you that delirium may be present. ACE-T sets out what the nurse does next, alongside medical assessment and the rest of the team.</p>
+      <p class="lede">Detection tools such as the 4AT tell you that delirium may be present. ACE-T describes the initial nursing actions, alongside medical assessment and the rest of the team.</p>
     </div>
     <div class="flow" role="list">
       <div class="flow-step" role="listitem">
@@ -119,12 +120,12 @@ export default {
 <section class="section" aria-labelledby="benefits-h">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Why nurses use it</p>
-      <h2 id="benefits-h">What ACE-T gives you at the bedside</h2>
+      <p class="eyebrow">Nursing actions</p>
+      <h2 id="benefits-h">What the bedside form includes</h2>
     </div>
     <div class="feature-grid">
       <div class="feature"><div class="feature-icon">${icon('compass')}</div><h3>A clear place to start</h3><p>The first nursing actions after a positive screen, together on one page.</p></div>
-      <div class="feature"><div class="feature-icon">${icon('search')}</div><h3>Familiar checks, brought together</h3><p>Glucose, retention, constipation, hydration and pain are quick to check and easily overlooked. ACE-T puts them side by side.</p></div>
+      <div class="feature"><div class="feature-icon">${icon('search')}</div><h3>Familiar checks, brought together</h3><p>Prompts to assess blood glucose, urinary retention, constipation, hydration and pain appear together on the form.</p></div>
       <div class="feature"><div class="feature-icon">${icon('heart')}</div><h3>Attention to the person</h3><p>Distress, reassurance, glasses and hearing aids, a calmer space, and the people who know the patient.</p></div>
       <div class="feature"><div class="feature-icon">${icon('pen')}</div><h3>Delirium made visible</h3><p>Writing “delirium” or “? delirium” and the score in the record means everyone who reads the notes can see it.</p></div>
       <div class="feature"><div class="feature-icon">${icon('team')}</div><h3>A team response</h3><p>Findings go to the clinical team, the family is informed, and the plan is agreed with the multidisciplinary team.</p></div>
@@ -138,7 +139,7 @@ export default {
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">From the pilot</p>
-      <h2 id="pilot-h">Tested in three hospitals, in three countries</h2>
+      <h2 id="pilot-h">Piloted in three hospitals</h2>
       <p class="lede">ACE-T was refined with feedback from hospital staff and then introduced at the Royal Infirmary of Edinburgh, AGAPLESION Markus Krankenhaus in Frankfurt, and Stanford Hospital in California.</p>
     </div>
     <div class="stats">

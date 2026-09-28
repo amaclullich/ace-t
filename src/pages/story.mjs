@@ -36,14 +36,14 @@ ${chapter(1, 'Starting point', 'question', `
 
 ${chapter(2, 'The gap', 'gap', `
     <h2>Who does what, and when</h2>
-    <p>Most guidelines do not say which professional group is responsible for which action. Two go further. The American Psychiatric Association’s 2025 guideline notes that nurses “deliver or assure delivery” of most non-drug interventions. The German S3 guideline places the urgent medical work-up with specialist physicians, and allocates non-drug care to nursing, occupational therapy and physiotherapy by problem area.</p>
-    <p>Neither sets out the order or timing of what nurses should do in the hours immediately after a positive screen.</p>
+    <p>The manuscript’s review found that most guidelines did not specify which professional group was responsible for which action. Two went further. The American Psychiatric Association’s 2025 guideline notes that nurses “deliver or assure delivery” of most non-drug interventions. The German S3 guideline places the urgent medical work-up with specialist physicians, and allocates non-drug care to nursing, occupational therapy and physiotherapy by problem area.</p>
+    <p>Neither specifies the order or timing of what nurses should do in the hours immediately after a positive screen.</p>
     <p>Outside guidelines, research studies, textbook chapters, order sets and clinical pathways vary in the same ways: sequence, timing, documentation, and which discipline does what. As a result, clinical teams vary in how they respond to a positive screen. Studies have found gaps in identifying triggers that could be reversed, in assessing and managing distress, and in telling patients and families about the diagnosis. Several have found gaps in escalation and action after positive screens.</p>`)}
 
 ${chapter(3, 'The idea', 'idea', `
     <h2>Start with the nurse</h2>
-    <p>In many health systems, nurses carry out most delirium screening. They are therefore in the best position to respond as soon as a screen is positive. They also carry much of the ongoing care: managing interventions, monitoring distress, talking with families and keeping patients safe.</p>
-    <p>The idea for ACE-T came from two Edinburgh clinicians: Alasdair MacLullich, a geriatrician at the University of Edinburgh who developed the 4AT, and Maggie Higgins, a nurse in Medicine of the Elderly at the Royal Infirmary of Edinburgh. They wanted a short, practical tool for the first steps after a positive screen, one that nurses could start straight away and that would sit alongside the medical and wider team roles.</p>
+    <p>In many health systems, nurses carry out most delirium screening. They can therefore respond promptly to a positive screen. They also carry much of the ongoing care: managing interventions, monitoring distress, talking with families and keeping patients safe.</p>
+    <p>The idea for ACE-T came from two Edinburgh clinicians: Alasdair MacLullich, a geriatrician at the University of Edinburgh who developed the 4AT, and Maggie Higgins, a nurse in Medicine of the Elderly at the Royal Infirmary of Edinburgh. They wanted a short, practical tool for the first steps after a positive screen, one that nurses could start straight away and that would complement the medical and wider team roles.</p>
     <blockquote>A practical nurse-focused tool is needed to guide the first steps after a positive screen.</blockquote>
     <p class="muted" style="font-size:.95rem">From the introduction to the ACE-T paper.</p>`)}
 
@@ -111,7 +111,7 @@ ${chapter(8, 'Results', 'results', `
       ${dumbbell({ id: 'comm', title: 'Findings communicated to the medical team', sub: 'Out of records where this applied', rows: [
         { site: 'Frankfurt', b: [4, 10], a: [9, 9] }, { site: 'Edinburgh', b: [2, 4], a: [10, 10] }, { site: 'Stanford', b: [0, 5], a: [3, 10] }] })}
     </div>
-    <p>Other items were more mixed. Documented distress assessment rose in Stanford (3 of 10 before, 10 of 10 after) and in Frankfurt (4 of 10 to 6 of 10), and was already high in Edinburgh (9 of 10 before, 7 of 9 after). Informing the patient or family, and giving a leaflet, varied between sites.</p>
+    <p>Other items were more mixed. Documented distress assessment rose in Stanford (3 of 10 before, 10 of 10 after) and in Frankfurt (4 of 10 to 6 of 10), but fell in Edinburgh (9 of 10 before, 7 of 9 after). Informing the patient or family, and giving a leaflet, varied between sites.</p>
     <p>Vital signs and blood test review were already recorded in almost every Edinburgh and Stanford record before ACE-T. In Frankfurt, the baseline records came from the delirium team rather than the full ward notes, so the low baseline figures there are likely to reflect, at least in part, which records were reviewed.</p>
     <div class="card mt-2">
       <h3>What the pilot does not show</h3>
@@ -127,7 +127,7 @@ ${chapter(8, 'Results', 'results', `
 
 ${chapter(9, 'Next steps', 'next', `
     <h2>What comes next</h2>
-    <p>The paper recommends a prospective feasibility study. It would design the implementation with bedside nurses, patients and carers; look at how ACE-T fits with the work of other disciplines; formally assess content validity and usability; and include consecutive eligible patients rather than a selected sample.</p>
+    <p>The paper recommends a prospective feasibility study. Researchers would design the implementation with bedside nurses, patients and carers; look at how ACE-T fits with the work of other disciplines; formally assess content validity and usability; and include consecutive eligible patients rather than a selected sample.</p>
     <p>It would measure reach, uptake, completion within four hours, fidelity, staff workload, acceptability, communication with patients and carers, and unintended consequences. It would also test whether an electronic version reduces duplicate recording without adding alerts or paperwork. That groundwork would make it possible to test clinical effectiveness.</p>
     <p>The authors describe ACE-T as a promising, practical tool for the initial nursing response to delirium, and a starting point for teams who want those first steps to be clearer and more consistent in routine care.</p>
     <ol class="timeline" aria-label="Stages of ACE-T development">

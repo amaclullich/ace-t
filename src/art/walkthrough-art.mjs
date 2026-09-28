@@ -67,7 +67,7 @@ export const SCENES = [
     prompts: [
       { text: 'Advice varies between papers and protocols', at: 'research papers' },
       { text: 'Who acts, and when, is often unclear', at: 'without clearly saying' },
-      { text: 'ACE-T sets out the nursing contribution', at: 'ace-t was developed' },
+      { text: 'ACE-T describes the nursing contribution', at: 'ace-t was developed' },
       { text: 'A team response', at: 'supports a team response' },
     ],
     art: (T, S) => {

@@ -87,16 +87,31 @@ export function chaptersHtml() {
   return `<ol class="chapters">${CHAPTERS.map((c, i) => `<li><button type="button" data-start="${c.start}"${c.d ? ` data-d="${c.d}"` : ''} aria-current="${i === 0}"><span class="ch-time">${fmt(c.start)}</span><span><span class="ch-sec">${esc(c.section)}</span><span class="ch-title">${esc(c.title)}</span></span></button></li>`).join('')}</ol>`;
 }
 
+// Move paragraph breaks to the end of a spoken sentence. Scene/audio timings stay unchanged.
+function transcriptParagraphs() {
+  const groups = [];
+  let from = 0;
+  for (const chapter of CHAPTERS.slice(1)) {
+    let to = WORDS.findIndex((w, i) => i >= from && w.s >= chapter.start - 0.3);
+    if (to < 0) break;
+    while (to < WORDS.length && to > from && !/[.!?][”"']?$/.test(WORDS[to - 1].w)) to++;
+    if (to > from) groups.push(WORDS.slice(from, to));
+    from = to;
+  }
+  if (from < WORDS.length) groups.push(WORDS.slice(from));
+  return groups;
+}
+
 export function transcriptHtml() {
-  return CHAPTERS.map(c => {
-    const ws = WORDS.filter(w => w.s >= c.start - 0.3 && w.s < c.end - 0.3);
+  return transcriptParagraphs().map(ws => {
+    const start = ws[0].s;
     const body = ws.map(w => `<span class="w" data-s="${w.s}">${esc(w.w)}</span>`).join(' ');
-    return `<p data-start="${c.start}" tabindex="0"><span class="t-time">${fmt(c.start)}</span>${body}</p>`;
+    return `<p data-start="${start}" tabindex="0"><span class="t-time">${fmt(start)}</span>${body}</p>`;
   }).join('\n');
 }
 
 export function plainTranscript() {
-  return CHAPTERS.map(c => WORDS.filter(w => w.s >= c.start - 0.3 && w.s < c.end - 0.3).map(w => w.w).join(' ')).join('\n\n');
+  return transcriptParagraphs().map(ws => ws.map(w => w.w).join(' ')).join('\n\n');
 }
 
 export function vtt() {

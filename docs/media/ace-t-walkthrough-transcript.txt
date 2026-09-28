@@ -7,9 +7,9 @@ The problem is not a shortage of advice about delirium. Research papers and clin
 
 There are three sections: Acute Triggers, Patient Experience, and Treatment. This is a tool for the treatment of delirium, not a delirium prevention programme. It follows a positive detection result; it does not make the diagnosis. Use it alongside clinical assessment and your local delirium pathway, not as a replacement for either.
 
-The aim is to address the relevant suggestions within the first four hours after detection. That gives the early response a time frame. It does not mean waiting four hours to act, and it is not a validated safety threshold. Escalate urgent concerns immediately. The sections can be used together; they are not
+The aim is to address the relevant suggestions within the first four hours after detection. That gives the early response a time frame. It does not mean waiting four hours to act, and it is not a validated safety threshold. Escalate urgent concerns immediately. The sections can be used together; they are not a queue.
 
-a queue. Begin by checking observations: pulse, blood pressure, oxygen saturation, respiratory rate, temperature, and conscious level. Check capillary blood glucose and whether routine blood tests have been sent. Escalate abnormal findings as required. If further investigations are needed, discuss these with the appropriate clinician, following local policy and your scope of practice.
+Begin by checking observations: pulse, blood pressure, oxygen saturation, respiratory rate, temperature, and conscious level. Check capillary blood glucose and whether routine blood tests have been sent. Escalate abnormal findings as required. If further investigations are needed, discuss these with the appropriate clinician, following local policy and your scope of practice.
 
 Assess for urinary retention and constipation. Review hydration, nutrition, and pain. Consider infection assessment where clinically indicated, rather than routine urine testing for every positive delirium screen. Check whether medication review has been completed, and raise possible medicine-related problems. The tool helps you bring together findings, gaps, and concerns that need action.
 

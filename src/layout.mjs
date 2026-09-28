@@ -6,6 +6,7 @@ export const SITE = {
   base: (process.env.PUBLIC_BASE_URL || 'https://theace-t.com').replace(/\/$/, ''),
   reviewed: 'September 2026',
   contact: 'alasdair@the4at.com',
+  updated: '2026-09-28',
 };
 
 export const NAV = [
@@ -21,6 +22,22 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
   const fullTitle = key === 'home' ? `ACE-T | Clear first steps after a positive delirium screen` : `${title} | ACE-T`;
   const url = `${SITE.base}/${path === 'index.html' ? '' : path}`;
   const nav = NAV.map(n => `<a href="${n.href}"${n.key === key ? ' aria-current="page"' : ''}>${n.label}</a>`).join('');
+  const ownerId = `${SITE.base}/about.html#ownership`;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich',
+        url: 'https://www.alasdairmaclullich.com/', jobTitle: 'Professor of Geriatric Medicine',
+        affiliation: { '@type': 'Organization', name: 'University of Edinburgh' },
+        sameAs: ['https://edwebprofiles.ed.ac.uk/profile/alasdair-maclullich', 'https://www.research.ed.ac.uk/en/persons/alasdair-maclullich/'] },
+      { '@type': 'WebSite', '@id': `${SITE.base}/#website`, url: `${SITE.base}/`, name: 'ACE-T',
+        inLanguage: 'en-GB', publisher: { '@id': ownerId } },
+      { '@type': key === 'about' ? 'AboutPage' : 'WebPage', '@id': `${url}#webpage`,
+        url, name: fullTitle, description, inLanguage: 'en-GB', dateModified: SITE.updated,
+        isPartOf: { '@id': `${SITE.base}/#website` }, publisher: { '@id': ownerId },
+        about: { '@type': 'Thing', name: 'ACE-T: initial nursing response to delirium' } }
+    ]
+  };
   return `<!doctype html>
 <html lang="en-GB" class="no-js">
 <head>
@@ -28,7 +45,9 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${fullTitle}</title>
 <meta name="description" content="${description}">
+${key === '404' ? '<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${url}">
+<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>
 <meta name="theme-color" content="#0e5c57">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ACE-T">
@@ -88,7 +107,7 @@ ${body}
     </div>
     <div class="footer-base">
       <span>Content checked against the ACE-T manuscript, ${SITE.reviewed}.</span>
-      <span>No cookies, tracking or patient data.</span>
+      <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Updated 28 September 2026.</span>
     </div>
   </div>
 </footer>
