@@ -3,7 +3,7 @@ import { icon } from './art/icons.mjs';
 export const SITE = {
   name: 'ACE-T',
   tagline: 'The first steps in delirium care',
-  base: (process.env.PUBLIC_BASE_URL || 'https://amaclullich.github.io/ace-t').replace(/\/$/, ''),
+  base: (process.env.PUBLIC_BASE_URL || 'https://theace-t.com').replace(/\/$/, ''),
   reviewed: 'September 2026',
   contact: 'alasdair@the4at.com',
 };
