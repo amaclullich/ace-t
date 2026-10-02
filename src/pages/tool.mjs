@@ -5,14 +5,15 @@ import { fourHourClock } from '../art/scenes.mjs';
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
 export default {
-  key: 'tool', path: 'tool.html', title: 'The ACE-T tool',
-  description: 'The full ACE-T bedside tool: Acute Triggers, Patient Experience and Treatment prompts for the first four hours after a positive delirium screen, with the reason for each prompt and the Quick Distress Assessment Tool.',
+  key: 'tool', path: 'tool.html', title: "Using ACE-T for the initial nursing response to delirium",
+  description: "Read the ACE-T bedside prompts for acute triggers, patient experience and treatment, with explanations of the initial nursing response to delirium.",
+  modified: '2026-10-02',
   body: () => `
 <section class="page-hero">
   <div class="wrap page-hero-grid">
     <div>
       <p class="eyebrow">The bedside tool</p>
-      <h1>Using ACE-T</h1>
+      <h1>Using ACE-T in delirium care</h1>
       <p class="lede">You have just done a 4AT, or another delirium screen, and the result is positive. Or you are worried that a patient has delirium. Start ACE-T now, and work through the three domains in parallel.</p>
       <div class="btn-row mt-2 no-print">
         <a class="btn btn-primary" href="downloads/ACE-T-bedside-tool-A4.pdf" download>${icon('download')}Bedside form (PDF)</a>

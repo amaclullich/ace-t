@@ -2,14 +2,15 @@ import { icon } from '../art/icons.mjs';
 import { playerHtml, chaptersHtml, transcriptHtml } from '../walkthrough-build.mjs';
 
 export default {
-  key: 'walkthrough', path: 'walkthrough.html', title: 'Narrated walkthrough',
+  key: 'walkthrough', path: 'walkthrough.html', title: "ACE-T delirium care: narrated bedside walkthrough",
   scripts: ['walkthrough.js'],
-  description: 'A narrated, animated walkthrough of the ACE-T tool for nurses, with captions, chapters and a full transcript. Under five minutes.',
+  description: "A narrated walkthrough of ACE-T for the initial nursing response to delirium, with bedside examples, captions and a full transcript.",
+  modified: '2026-10-02',
   body: () => `
 <section class="page-hero" style="padding-bottom:24px">
   <div class="wrap">
     <p class="eyebrow">Walkthrough</p>
-    <h1>ACE-T at the bedside</h1>
+    <h1>A narrated walkthrough of ACE-T</h1>
     <p class="lede">A narrated walkthrough of every ACE-T prompt, from the positive screen to the shared plan. Press play, or jump to a chapter.</p>
     <div class="walk-meta">
       <span>${icon('clock')}4 minutes 41 seconds</span>

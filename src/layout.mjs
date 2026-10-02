@@ -18,14 +18,15 @@ export const NAV = [
 
 export const wordmark = (cls = '') => `<span class="wordmark ${cls}" aria-label="ACE-T"><span class="w-ac">AC</span><span class="w-e">E</span><span class="w-dash">-</span><span class="w-t">T</span></span>`;
 
-export function layout({ key, title, description, path, body, scripts = [], ogImage = 'assets/og-ace-t.png', head = '' }) {
-  const fullTitle = key === 'home' ? `ACE-T | Clear first steps after a positive delirium screen` : `${title} | ACE-T`;
+export function layout({ key, title, description, path, body, scripts = [], ogImage = 'assets/og-ace-t.png', head = '', modified = SITE.updated }) {
+  const fullTitle = key === '404' ? `${title} | ACE-T` : title;
   const url = `${SITE.base}/${path === 'index.html' ? '' : path}`;
   const nav = NAV.map(n => `<a href="${n.href}"${n.key === key ? ' aria-current="page"' : ''}>${n.label}</a>`).join('');
   const ownerId = `${SITE.base}/about.html#ownership`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
+      { '@type': 'Thing', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html` },
       { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich',
         url: 'https://www.alasdairmaclullich.com/', jobTitle: 'Professor of Geriatric Medicine',
         affiliation: { '@type': 'Organization', name: 'University of Edinburgh' },
@@ -33,11 +34,29 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
       { '@type': 'WebSite', '@id': `${SITE.base}/#website`, url: `${SITE.base}/`, name: 'ACE-T',
         inLanguage: 'en-GB', publisher: { '@id': ownerId } },
       { '@type': key === 'about' ? 'AboutPage' : 'WebPage', '@id': `${url}#webpage`,
-        url, name: fullTitle, description, inLanguage: 'en-GB', dateModified: SITE.updated,
+        url, name: fullTitle, description, inLanguage: 'en-GB', dateModified: modified,
         isPartOf: { '@id': `${SITE.base}/#website` }, publisher: { '@id': ownerId },
-        about: { '@type': 'Thing', name: 'ACE-T: initial nursing response to delirium' } }
+        about: { '@id': `${SITE.base}/#ace-t` } }
     ]
   };
+  if (key === 'downloads') {
+    const documents = [
+      ['ACE-T-bedside-tool-A4.pdf', 'ACE-T bedside form, A4', 'application/pdf'],
+      ['ACE-T-bedside-tool-US-Letter.pdf', 'ACE-T bedside form, US Letter', 'application/pdf'],
+      ['ACE-T-bedside-tool-editable.docx', 'ACE-T bedside form, editable Word', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
+      ['ACE-T-at-a-glance-A4.pdf', 'ACE-T at a glance, A4', 'application/pdf'],
+      ['ACE-T-at-a-glance.png', 'ACE-T at a glance, PNG', 'image/png'],
+    ];
+    const documentRefs = documents.map(([file]) => ({ '@id': `${SITE.base}/downloads/${file}` }));
+    schema['@graph'].find(item => item['@id'] === `${url}#webpage`).hasPart = documentRefs;
+    for (const [file, name, encodingFormat] of documents) {
+      schema['@graph'].push({ '@type': 'DigitalDocument', '@id': `${SITE.base}/downloads/${file}`, name,
+        url: `${SITE.base}/downloads/${file}`, encodingFormat, inLanguage: 'en-GB',
+        about: { '@id': `${SITE.base}/#ace-t` }, publisher: { '@id': ownerId },
+        isPartOf: { '@id': `${url}#webpage` } });
+    }
+  }
+  const updatedLabel = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${modified}T00:00:00Z`));
   return `<!doctype html>
 <html lang="en-GB" class="no-js">
 <head>
@@ -109,7 +128,7 @@ ${body}
     </div>
     <div class="footer-base">
       <span>Content checked against the ACE-T manuscript, ${SITE.reviewed}.</span>
-      <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Updated 2 October 2026.</span>
+      <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Website page updated ${updatedLabel}.</span>
     </div>
   </div>
 </footer>

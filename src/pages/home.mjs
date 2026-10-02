@@ -11,14 +11,15 @@ const examples = {
 };
 
 export default {
-  key: 'home', path: 'index.html', title: 'Home',
-  description: 'ACE-T is a one-page nursing tool for the first hours after a positive delirium screen: Acute Triggers, Patient Experience and Treatment. Free PDF and Word versions, a narrated walkthrough and the story of how it was developed.',
+  key: 'home', path: 'index.html', title: "ACE-T: a nursing tool for the first response to delirium",
+  description: "ACE-T supports the initial nursing response to delirium. Download the free bedside form, follow the walkthrough and read the early pilot evidence.",
+  modified: '2026-10-02',
   body: () => `
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">For nurses · Delirium care</p>
-      <h1>Clear first steps after a positive delirium screen</h1>
+      <h1>ACE-T: first steps after a positive delirium screen</h1>
       <p class="lede">ACE-T is a one-page nursing tool for the first hours after delirium is detected. It helps you look for acute triggers, attend to the patient’s experience, and start treatment and communication with the team.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="walkthrough.html">${icon('play')}Watch the walkthrough</a>

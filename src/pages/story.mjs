@@ -10,17 +10,39 @@ const chapter = (n, kicker, id, inner) => `
 </article>`;
 
 export default {
-  key: 'story', path: 'story.html', title: 'The story of ACE-T',
-  description: 'How ACE-T was developed: the gap after a positive delirium screen, a nursing tool drafted in Edinburgh, feedback from 53 staff, and a pilot in Edinburgh, Frankfurt and Stanford.',
+  key: 'story', path: 'story.html', title: "ACE-T development and early delirium care pilot evidence",
+  description: "How nurses and doctors developed ACE-T in Edinburgh, Frankfurt and Stanford, with early pilot results, methods, authors and study limitations.",
+  modified: '2026-10-02',
   body: () => `
 <section class="page-hero">
   <div class="wrap page-hero-grid">
     <div>
       <p class="eyebrow">The story</p>
-      <h1>How ACE-T was made</h1>
+      <h1>How ACE-T was developed and piloted</h1>
       <p class="lede">A one-page nursing tool, drafted by clinicians in three countries, reshaped by feedback from 53 hospital staff, and piloted in Edinburgh, Frankfurt and Stanford. This account follows the ACE-T development and pilot paper.</p>
     </div>
     <div class="art-frame">${sitesMap({ id: 'story-map' })}</div>
+  </div>
+</section>
+
+
+<section class="section-tight" aria-labelledby="evidence-summary-h">
+  <div class="wrap">
+    <div class="card" id="evidence-summary">
+      <h2 id="evidence-summary-h">Early evidence at a glance</h2>
+      <dl class="evidence-summary">
+        <dt><strong>Development and feedback</strong></dt>
+        <dd>Fifty-three staff at three hospitals reviewed the provisional tool: 26 nurses, 19 physicians and 8 advanced practice providers. Their comments informed revisions.</dd>
+        <dt><strong>Pilot design</strong></dt>
+        <dd>Sixty records were reviewed: 10 before and 10 after introduction at each hospital. Documentation was assessed over 48 hours. This was a small, non-random, unblinded pilot.</dd>
+        <dt><strong>Findings</strong></dt>
+        <dd>Delirium documentation increased at all three sites. Other recorded care actions varied by site; some measures declined. <a href="#results">See all results with denominators and qualifications</a>.</dd>
+        <dt><strong>Limits</strong></dt>
+        <dd>The pilot did not establish improvements in patient outcomes or validate the four-hour target. It did not establish effects on workload or safety. Patients and carers were not involved in the initial development.</dd>
+        <dt><strong>Source and status</strong></dt>
+        <dd>The development and pilot manuscript was submitted for publication in 2026. <a href="about.html#source">Full citation and publication status</a>.</dd>
+      </dl>
+    </div>
   </div>
 </section>
 

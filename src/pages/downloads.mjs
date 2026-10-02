@@ -1,13 +1,14 @@
 import { icon } from '../art/icons.mjs';
 
 export default {
-  key: 'downloads', path: 'downloads.html', title: 'Download ACE-T',
-  description: 'Download the ACE-T bedside tool as a PDF (A4 or US Letter) or an editable Word document, and the ACE-T at a glance poster.',
+  key: 'downloads', path: 'downloads.html', title: "Download ACE-T: delirium nursing tool in PDF and Word",
+  description: "Download the ACE-T delirium nursing tool in A4, US Letter and editable Word formats, plus a summary sheet, narration, transcript and captions.",
+  modified: '2026-10-02',
   body: ({ sizes }) => `
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">Downloads</p>
-    <h1>Download ACE-T</h1>
+    <h1>Download the ACE-T delirium nursing tool</h1>
     <p class="lede">Print the bedside form for the ward, edit the Word version to match your local wording, or put the poster up where staff will see it.</p>
   </div>
 </section>
@@ -44,6 +45,14 @@ export default {
           <a class="btn btn-secondary" href="downloads/ACE-T-at-a-glance.png" download>${icon('image')}PNG</a>
         </div>
       </article>
+    </div>
+
+
+    <div class="card mt-3" id="download-release">
+      <h2 class="h-card">Download release and citation</h2>
+      <p><strong>Website download release: 2 October 2026.</strong> The bedside prompts follow Table 1 of the ACE-T development and pilot manuscript submitted for publication in 2026. The PDFs and editable Word file contain the same clinical prompts. This release date identifies the website download set.</p>
+      <p>For the tool’s development and early evidence, cite: Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. <em>Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems.</em> Submitted for publication, 2026.</p>
+      <p class="mb-0">For this download set, cite: MacLullich A. <em>ACE-T delirium nursing tool: website downloads.</em> Website release 2 October 2026. <a href="https://theace-t.com/downloads.html">theace-t.com/downloads.html</a>. Include the date you accessed the files. <a href="about.html#source">Sources and publication status</a>.</p>
     </div>
 
     <div class="grid-2 mt-3">

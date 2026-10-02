@@ -2,14 +2,41 @@ import { icon } from '../art/icons.mjs';
 import { bars } from '../art/charts.mjs';
 
 export default {
-  key: 'why', path: 'why-ace-t.html', title: 'Why ACE-T',
-  description: 'Why a nurse-focused tool for the first hours after a positive delirium screen was needed, the nursing actions it includes, what staff said about it, and where the 4AT fits.',
+  key: 'why', path: 'why-ace-t.html', title: "After a positive delirium screen: why ACE-T was developed",
+  description: "Why ACE-T was developed to support early nursing care after a positive delirium screen, and how it relates to the 4AT and clinical assessment.",
+  modified: '2026-10-02',
   body: () => `
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">Why ACE-T</p>
-    <h1>The gap after the screen</h1>
+    <h1>Why ACE-T was developed for the first response to delirium</h1>
     <p class="lede">Tools for detecting delirium are well established. What should happen in the first hours after a positive screen, and who should do it, has been far less clearly defined. ACE-T describes the nursing part of that response.</p>
+  </div>
+</section>
+
+
+<section class="section-tight" aria-labelledby="using-ace-t-h">
+  <div class="wrap">
+    <h2 id="using-ace-t-h">When to use ACE-T</h2>
+    <div class="grid-2" style="align-items:start">
+      <div class="card">
+        <h3>After delirium is suspected</h3>
+        <p>ACE-T supports the initial nursing response after a positive delirium screen or when delirium is suspected clinically. Use the bedside prompts with clinical judgement, your local delirium pathway and medical assessment. Act on urgent concerns at once; the four-hour target is not a reason to wait.</p>
+        <p><a href="tool.html">Read the bedside prompts</a> or <a href="downloads.html">download the form</a>.</p>
+      </div>
+      <div class="card">
+        <h3>How it relates to the 4AT</h3>
+        <p>The 4AT assesses for possible delirium and cognitive impairment. ACE-T prompts care after detection. A positive 4AT needs clinical assessment, and a low score does not rule out delirium when the history or clinical findings raise concern. <a href="#the-4at">Read the 4AT explanation and official guidance</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Who it is for</h3>
+        <p>The form was developed for nurses working with the wider clinical team. It covers Acute Triggers, Patient Experience and Treatment. It does not require nurses to diagnose the cause or order investigations outside local policy. Families can use <a href="https://deliriumsupport.com/">Delirium Support</a> for information about delirium.</p>
+      </div>
+      <div class="card">
+        <h3>What the evidence supports</h3>
+        <p>A small pilot in Edinburgh, Frankfurt and Stanford assessed staff views and clinical documentation. Patient outcomes and the four-hour target have not been validated by that pilot. <a href="story.html#evidence-summary">Read the methods and limits of the evidence</a>.</p>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -1,13 +1,14 @@
 import { SITE } from '../layout.mjs';
 
 export default {
-  key: 'about', path: 'about.html', title: 'About this site',
-  description: 'Who maintains the ACE-T website, the development team, evidence and limitations, sources, related delirium resources and contact details.',
+  key: 'about', path: 'about.html', title: "About ACE-T: developers, clinical sources and contact",
+  description: "Meet the ACE-T developers and website maintainer. Read the clinical sources, evidence status, correction process and privacy information.",
+  modified: '2026-10-02',
   body: () => `
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">About</p>
-    <h1>About this site</h1>
+    <h1>About ACE-T and this website</h1>
     <p class="lede">An educational website for nurses and other healthcare staff about ACE-T, a tool for the first hours after a positive delirium screen.</p>
   </div>
 </section>
@@ -30,6 +31,7 @@ export default {
       <h2 style="font-size:1.5rem">Source and citation</h2>
       <p>The ACE-T content on this site is taken from the development and pilot paper, which is the source for the tool prompts and pilot results:</p>
       <div class="cite">Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026.</div>
+      <p><a href="downloads.html#download-release">Download release and website citation</a>. If you adapt a form locally, retain the ACE-T attribution and identify your local changes and date.</p>
       <p class="mt-1">The bedside prompts follow Table 1 of the paper, with the 4AT named as the screening tool. The “Why” notes on the tool page are teaching notes written for this site and checked against NICE guideline CG103. A link to the published paper will be added when it is available.</p>
     </div>
     <div class="card">
@@ -46,7 +48,8 @@ export default {
     <div class="card">
       <h2 style="font-size:1.5rem">Editorial approach and corrections</h2>
       <p>The bedside prompts, teaching notes and pilot findings have different sources. The prompts follow the manuscript; the added teaching notes use the clinical guidance linked above. Website edits preserve the wording and scoring of clinical instruments.</p>
-      <p>The site’s content record documents a manuscript check on 23 September 2026. The language, source links and evidence summaries were updated on 28 September 2026.</p>
+      <p>The site’s content record documents a manuscript check on 23 September 2026. The language and source links were updated on 28 September 2026. Page descriptions, practical use information, the evidence summary and download citation details were updated on 2 October 2026.</p>
+      <p>Source checks and website edits are recorded separately from clinical review. The website update date does not establish a new clinical review or a new instrument version. Corrections to prompts, scoring or pilot figures are checked against the source manuscript; changes to teaching guidance are checked against the linked clinical guidelines. A published paper will replace the submitted manuscript as the primary evidence source when available.</p>
       <p>The site is maintained by Professor Alasdair MacLullich, University of Edinburgh. To report a content or accessibility problem, email <a href="mailto:${SITE.contact}">${SITE.contact}</a>.</p>
       <p class="mb-0">Please do not send identifiable patient information by email.</p>
     </div>

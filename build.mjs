@@ -47,7 +47,7 @@ const sizes = {
 
 const finish = html => html.replace(/__CSSV__/g, cssV).replace(/__JSV__/g, jsV);
 for (const p of pages) {
-  const html = layout({ key: p.key, title: p.title, description: p.description, path: p.path, scripts: p.scripts, body: p.body({ sizes }) });
+  const html = layout({ key: p.key, title: p.title, description: p.description, path: p.path, scripts: p.scripts, modified: p.modified, body: p.body({ sizes }) });
   fs.writeFileSync(path.join(OUT, p.path), finish(html));
 }
 
@@ -63,7 +63,7 @@ for (const [from, to] of Object.entries(redirects)) {
   fs.writeFileSync(path.join(OUT, from), `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>ACE-T</title><meta http-equiv="refresh" content="0; url=${to}"><link rel="canonical" href="${SITE.base}/${to}"><meta name="robots" content="noindex"></head><body><p><a href="${to}">This page has moved. Continue to ACE-T.</a></p></body></html>\n`);
 }
 
-fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `  <url><loc>${SITE.base}/${p.path === 'index.html' ? '' : p.path}</loc></url>`).join('\n')}\n</urlset>\n`);
+fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `  <url><loc>${SITE.base}/${p.path === 'index.html' ? '' : p.path}</loc><lastmod>${p.modified}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE.base}/sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 console.log(`Built ${pages.length} pages into ${OUT}/ (css ${cssV}, js ${jsV})`);
