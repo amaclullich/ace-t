@@ -51,9 +51,9 @@ export default {
       <p class="mb-0">Please do not send identifiable patient information by email.</p>
     </div>
     <div class="card">
-      <h2 style="font-size:1.5rem">Accessibility and privacy</h2>
+      <h2 id="privacy" style="font-size:1.5rem">Accessibility and privacy</h2>
       <p>The site uses readable text sizes, keyboard-accessible controls, layouts that adapt to phones, a text alternative for every chart, and captions and a transcript for the walkthrough. Animations are reduced if your device asks for reduced motion.</p>
-      <p class="mb-0">There are no cookies, analytics, advertising, forms or patient data entry. The hosting provider, GitHub Pages, may process technical request information; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>.</p>
+      <p class="mb-0">Google Analytics is optional and starts only after you choose “Allow analytics”. It records visits and interactions such as downloads, using cookies to distinguish visits. Advertising tracking is disabled. Select “Analytics preferences” in the footer to change your choice; withdrawing consent stops measurement and removes this site’s analytics cookies. Your choice is stored on your device. There are no forms or patient data entry. See <a href="https://policies.google.com/privacy" rel="noopener">Google’s privacy policy</a>. The hosting provider, GitHub Pages, may process technical request information; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>.</p>
     </div>
   </div>
 </section>

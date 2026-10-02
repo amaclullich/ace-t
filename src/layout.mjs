@@ -6,7 +6,7 @@ export const SITE = {
   base: (process.env.PUBLIC_BASE_URL || 'https://theace-t.com').replace(/\/$/, ''),
   reviewed: 'September 2026',
   contact: 'alasdair@the4at.com',
-  updated: '2026-09-28',
+  updated: '2026-10-02',
 };
 
 export const NAV = [
@@ -101,16 +101,24 @@ ${body}
           <li><a href="why-ace-t.html">Why ACE-T</a></li>
           <li><a href="story.html">How ACE-T was developed</a></li>
           <li><a href="about.html">About, citation and contact</a></li>
+          <li><button class="analytics-preferences" type="button">Analytics preferences</button></li>
           <li><a href="https://www.the4at.com/" rel="noopener">The 4AT</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-base">
       <span>Content checked against the ACE-T manuscript, ${SITE.reviewed}.</span>
-      <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Updated 28 September 2026.</span>
+      <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Updated 2 October 2026.</span>
     </div>
   </div>
 </footer>
+<section class="analytics-choice" aria-labelledby="analytics-choice-title" hidden>
+  <div class="wrap">
+    <h2 id="analytics-choice-title">Optional website analytics</h2>
+    <p>May we use Google Analytics to understand visits and downloads? It starts only if you allow it. We do not use advertising tracking. You can change your choice in the footer. <a href="about.html#privacy">Privacy information</a></p>
+    <div class="btn-row"><button class="btn btn-secondary" type="button" data-analytics="denied">Do not allow</button><button class="btn btn-secondary" type="button" data-analytics="granted">Allow analytics</button></div>
+  </div>
+</section>
 <script src="assets/site.js?v=__JSV__" defer></script>
 ${scripts.map(s => `<script src="assets/${s}?v=__JSV__" defer></script>`).join('\n')}
 </body>
