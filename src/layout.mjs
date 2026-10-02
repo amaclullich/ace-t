@@ -49,6 +49,7 @@ ${key === '404' ? '<meta name="robots" content="noindex">' : ''}
 <link rel="canonical" href="${url}">
 <script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>
 <meta name="theme-color" content="#0e5c57">
+<meta name="msvalidate.01" content="1ABA82F102DF1190DEEBABCE5577DBB4">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ACE-T">
 <meta property="og:title" content="${fullTitle}">
