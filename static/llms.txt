@@ -1,0 +1,22 @@
+# ACE-T
+
+> ACE-T is a free, nurse-focused tool for the first hours after a positive delirium screen. Its three domains are Acute Triggers, Patient Experience and Treatment (nursing treatment and communication). The aim is to complete, start or escalate applicable actions within four hours of a positive screen. ACE-T does not ask nurses to diagnose the cause or order investigations outside local policy, and it does not replace multidisciplinary care.
+
+Canonical website: https://theace-t.com/
+Language: British English (en-GB)
+Maintained by: Professor Alasdair MacLullich, University of Edinburgh (https://www.alasdairmaclullich.com/)
+Related tool: the 4AT delirium assessment tool (https://www.the4at.com/)
+
+## Pages
+
+- [Home](https://theace-t.com/): ACE-T supports the initial nursing response to delirium. Download the free bedside form, follow the walkthrough and read the early pilot evidence.
+- [The tool](https://theace-t.com/tool.html): The ACE-T bedside prompts for acute triggers, patient experience and treatment, with explanations, the Quick Distress Assessment Tool (QDAT) and handover.
+- [Narrated walkthrough](https://theace-t.com/walkthrough.html): A narrated walkthrough of ACE-T with bedside examples, captions and a full transcript.
+- [Why ACE-T](https://theace-t.com/why-ace-t.html): Why ACE-T was developed to support early nursing care after a positive delirium screen, and how it relates to the 4AT and clinical assessment.
+- [The story](https://theace-t.com/story.html): How nurses and doctors developed ACE-T in Edinburgh, Frankfurt and Stanford, with early pilot results, methods, authors and study limitations.
+- [Downloads](https://theace-t.com/downloads.html): The ACE-T bedside form in A4, US Letter and editable Word formats, plus a summary sheet, narration, transcript and captions.
+- [About](https://theace-t.com/about.html): The developers, clinical sources, evidence status, citation, correction process, contact and privacy information.
+
+## Evidence status
+
+ACE-T was developed and piloted across three health systems. The pilot results are reported site by site, with small non-random samples and no patient outcome measures, so they do not show effectiveness. The source is: Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026.
