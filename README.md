@@ -20,7 +20,7 @@ Published at **https://amaclullich.github.io/ace-t/** with GitHub Pages, from `m
 
 ## Updating
 
-Requires Node.js 20 or later. The site itself has no runtime dependencies, fonts, cookies or analytics.
+Requires Node.js 20 or later. The site itself has no runtime dependencies or web fonts. It uses limited Google Analytics (G-Z1V76FJWPK), on by default with an opt-out notice and an “Analytics preferences” button in the footer; the code is in `src/js/site.js`.
 
 ```sh
 npm install            # only needed for downloads, map and checks
