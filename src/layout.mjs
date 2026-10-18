@@ -26,7 +26,7 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Thing', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html` },
+      { '@type': 'CreativeWork', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', alternateName: 'ACE-T', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html`, inLanguage: 'en-GB', isAccessibleForFree: true, keywords: 'delirium, nursing, 4AT, acute care, initial response', audience: { '@type': 'MedicalAudience', audienceType: 'Nurses' }, author: { '@id': ownerId } },
       { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich',
         url: 'https://www.alasdairmaclullich.com/', jobTitle: 'Professor of Geriatric Medicine',
         affiliation: { '@type': 'Organization', name: 'University of Edinburgh' },
