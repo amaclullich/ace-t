@@ -23,7 +23,8 @@
   });
 })();
 
-// Basic consent mode: no Google script or requests until analytics is allowed.
+// Limited Google Analytics, on by default with an opt-out. Turning it off is
+// remembered on the device and removes this site's _ga cookies.
 (function () {
   var id = 'G-Z1V76FJWPK';
   var key = 'ace-t-analytics-choice';
@@ -87,6 +88,8 @@
       panel.querySelector('[data-analytics="denied"]').focus();
     });
   });
-  if (choice === 'granted' || choice === 'denied') apply(choice);
-  else panel.hidden = false;
+  // On by default: analytics runs unless the visitor has turned it off.
+  // The notice shows until the visitor makes a choice.
+  apply(choice === 'denied' ? 'denied' : 'granted');
+  if (choice !== 'granted' && choice !== 'denied') panel.hidden = false;
 })();
