@@ -45,7 +45,10 @@ const sizes = {
   poster: size('downloads/ACE-T-at-a-glance-A4.pdf'), mp3: size('media/ace-t-walkthrough.mp3'),
 };
 
-const finish = html => html.replace(/__CSSV__/g, cssV).replace(/__JSV__/g, jsV);
+// Keep "ACE-T" on one line in headings, so a line never ends with "ACE-" and starts with "T".
+const keepName = html => html.replace(/<(h[1-3])([^>]*)>([\s\S]*?)<\/\1>/g, (m, tag, attrs, inner) =>
+  `<${tag}${attrs}>${inner.replace(/(^|>)([^<]*)/g, (s, a, text) => a + text.replace(/ACE-T/g, '<span class="nobr">ACE-T</span>'))}</${tag}>`);
+const finish = html => keepName(html.replace(/__CSSV__/g, cssV).replace(/__JSV__/g, jsV));
 for (const p of pages) {
   const html = layout({ key: p.key, title: p.title, description: p.description, path: p.path, scripts: p.scripts, modified: p.modified, body: p.body({ sizes }) });
   fs.writeFileSync(path.join(OUT, p.path), finish(html));

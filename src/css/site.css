@@ -486,6 +486,7 @@ small { font-size: .875rem; }
 @media (max-width: 1000px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
 .site-footer a[href^="mailto:"] { overflow-wrap: anywhere; }
+.nobr { white-space: nowrap; }
 .site-footer .wordmark { font-size: 2rem; }
 .site-footer .wordmark .w-ac { color: #6fd0c0; }
 .site-footer .wordmark .w-e { color: #9dbdea; }
