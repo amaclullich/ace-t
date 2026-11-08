@@ -4,7 +4,7 @@ import { bars } from '../art/charts.mjs';
 export default {
   key: 'why', path: 'why-ace-t.html', title: "After a positive delirium screen: why ACE-T was developed",
   description: "Why ACE-T was developed to support early nursing care after a positive delirium screen, and how it relates to the 4AT and clinical assessment.",
-  modified: '2026-10-02',
+  modified: '2026-11-08',
   body: () => `
 <section class="page-hero">
   <div class="wrap">

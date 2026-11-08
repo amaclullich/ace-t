@@ -5,8 +5,10 @@ export const SITE = {
   tagline: 'The first steps in delirium care',
   base: (process.env.PUBLIC_BASE_URL || 'https://theace-t.com').replace(/\/$/, ''),
   reviewed: 'September 2026',
-  contact: 'alasdair@the4at.com',
-  updated: '2026-10-02',
+  contact: 'a.maclullich@ed.ac.uk',
+  profile: 'https://edwebprofiles.ed.ac.uk/profile/alasdair-maclullich',
+  address: ['Ageing and Health, Usher Institute', 'Usher Building, The University of Edinburgh', '5-7 Little France Road, Edinburgh BioQuarter', 'Edinburgh EH16 4UX, UK'],
+  updated: '2026-11-08',
 };
 
 export const NAV = [
@@ -27,7 +29,7 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
     '@context': 'https://schema.org',
     '@graph': [
       { '@type': 'CreativeWork', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', alternateName: 'ACE-T', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html`, inLanguage: 'en-GB', isAccessibleForFree: true, keywords: 'delirium, nursing, 4AT, acute care, initial response', audience: { '@type': 'MedicalAudience', audienceType: 'Nurses' }, author: { '@id': ownerId } },
-      { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich',
+      { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich', email: SITE.contact,
         url: 'https://www.alasdairmaclullich.com/', jobTitle: 'Professor of Geriatric Medicine',
         affiliation: { '@type': 'Organization', name: 'University of Edinburgh' },
         sameAs: ['https://edwebprofiles.ed.ac.uk/profile/alasdair-maclullich', 'https://www.research.ed.ac.uk/en/persons/alasdair-maclullich/'] },
@@ -120,9 +122,18 @@ ${body}
         <ul>
           <li><a href="why-ace-t.html">Why ACE-T</a></li>
           <li><a href="story.html">How ACE-T was developed</a></li>
-          <li><a href="about.html">About, citation and contact</a></li>
+          <li><a href="about.html">About and citation</a></li>
           <li><button class="analytics-preferences" type="button">Analytics preferences</button></li>
           <li><a href="https://www.the4at.com/" rel="noopener">The 4AT</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li>Professor Alasdair MacLullich<br>University of Edinburgh</li>
+          <li><a href="mailto:${SITE.contact}">${SITE.contact}</a></li>
+          <li><a href="${SITE.profile}" rel="noopener">University of Edinburgh profile</a></li>
+          <li><a href="about.html#contact">Postal address and contact details</a></li>
         </ul>
       </div>
     </div>

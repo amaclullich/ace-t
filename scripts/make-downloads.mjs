@@ -10,7 +10,7 @@ const D = 'static/downloads', A = 'static/assets';
 fs.mkdirSync(D, { recursive: true }); fs.mkdirSync(A, { recursive: true });
 const tmp = '/tmp/ace-t-print'; fs.mkdirSync(tmp, { recursive: true });
 
-const b = await chromium.launch();
+const b = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {});
 const page = await b.newPage();
 async function pdf(html, out, format) {
   fs.writeFileSync(`${tmp}/p.html`, html);

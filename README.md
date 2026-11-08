@@ -29,6 +29,9 @@ npm run check          # links, anchors, headings, house-style words
 npm run serve          # local server with range requests, http://127.0.0.1:8123/
 ```
 
+- **Regenerating the downloads** (`npm run downloads`): the forms were laid out with Chromium 141 (Playwright 1.56) and Liberation Sans standing in for Helvetica. Other browser versions or fonts can push the bedside form onto a second page, and the script then stops. If that happens, use Playwright 1.56 and a fontconfig file that maps "Helvetica Neue" and "Helvetica" to Liberation Sans and "Georgia" to Liberation Serif (`FONTCONFIG_FILE=...`). `CHROME_PATH` points the script at a specific Chrome if needed. Check that the PDFs differ from the previous set only where you meant them to.
+- **Contact details** (email, University of Edinburgh profile, postal address) are set once in `SITE` in `src/layout.mjs` and used in the footer and on the About page.
+
 - **Clinical wording** lives in one place: `src/data/tool.mjs`. The tool page, bedside PDFs, Word form and poster are all generated from it. After changing it, run `npm run downloads` and then `npm run build`.
 - **Pages** are in `src/pages/`, the shared header and footer in `src/layout.mjs`, styles in `src/css/site.css`.
 - **Illustrations** are original SVG drawn in code: `src/art/scenes.mjs` (bedside scene, clock, letters), `src/art/walkthrough-art.mjs` (the twelve walkthrough scenes), `src/art/map.mjs` (pilot sites map, built from Natural Earth data via `world-atlas`), `src/art/charts.mjs`.

@@ -3,7 +3,7 @@ import { SITE } from '../layout.mjs';
 export default {
   key: 'about', path: 'about.html', title: "About ACE-T: developers, clinical sources and contact",
   description: "Meet the ACE-T developers and website maintainer. Read the clinical sources, evidence status, correction process and privacy information.",
-  modified: '2026-10-02',
+  modified: '2026-11-08',
   body: () => `
 <section class="page-hero">
   <div class="wrap">
@@ -20,6 +20,15 @@ export default {
       <p>This site is maintained by <a href="https://www.alasdairmaclullich.com/">Professor Alasdair MacLullich</a>, Professor of Geriatric Medicine at the University of Edinburgh and a geriatrician at the Royal Infirmary of Edinburgh. He is one of the developers of ACE-T and the 4AT.</p>
       <p>His <a href="https://edwebprofiles.ed.ac.uk/profile/alasdair-maclullich">University of Edinburgh profile</a> describes his clinical and academic work. His <a href="https://www.research.ed.ac.uk/en/persons/alasdair-maclullich/">research profile</a> lists his publications.</p>
       <p>ACE-T was developed by a team of nurses and doctors in Edinburgh, Frankfurt and Stanford. <a href="story.html#team">See the authors and affiliations</a>.</p>
+    </div>
+    <div class="card" id="contact">
+      <h2 style="font-size:1.5rem">Contact</h2>
+      <p>Professor Alasdair MacLullich<br>Professor of Geriatric Medicine, University of Edinburgh</p>
+      <p>Email: <a href="mailto:${SITE.contact}">${SITE.contact}</a></p>
+      <p>Post:<br>${SITE.address.join('<br>')}</p>
+      <p>The same details are on his <a href="${SITE.profile}" rel="noopener">University of Edinburgh profile</a>.</p>
+      <p>Please write if your team is using or adapting ACE-T, if you have comments on the tool, or if you find a problem on this site.</p>
+      <p class="mb-0">Please do not send identifiable patient information by email.</p>
     </div>
     <div class="card" id="evidence">
       <h2 style="font-size:1.5rem">Evidence and intended use</h2>
@@ -48,7 +57,7 @@ export default {
     <div class="card">
       <h2 style="font-size:1.5rem">Editorial approach and corrections</h2>
       <p>The bedside prompts, teaching notes and pilot findings have different sources. The prompts follow the manuscript; the added teaching notes use the clinical guidance linked above. Website edits preserve the wording and scoring of clinical instruments.</p>
-      <p>The site’s content record documents a manuscript check on 23 September 2026. The language and source links were updated on 28 September 2026. Page descriptions, practical use information, the evidence summary and download citation details were updated on 2 October 2026.</p>
+      <p>The site’s content record documents a manuscript check on 23 September 2026. The language and source links were updated on 28 September 2026. Page descriptions, practical use information, the evidence summary and download citation details were updated on 2 October 2026. Contact details were added, and the web address printed on the downloads was changed to theace-t.com, on 8 November 2026.</p>
       <p>Source checks and website edits are recorded separately from clinical review. The website update date does not establish a new clinical review or a new instrument version. Corrections to prompts, scoring or pilot figures are checked against the source manuscript; changes to teaching guidance are checked against the linked clinical guidelines. A published paper will replace the submitted manuscript as the primary evidence source when available.</p>
       <p>The site is maintained by Professor Alasdair MacLullich, University of Edinburgh. To report a content or accessibility problem, email <a href="mailto:${SITE.contact}">${SITE.contact}</a>.</p>
       <p class="mb-0">Please do not send identifiable patient information by email.</p>
@@ -56,7 +65,7 @@ export default {
     <div class="card">
       <h2 id="privacy" style="font-size:1.5rem">Accessibility and privacy</h2>
       <p>The site uses readable text sizes, keyboard-accessible controls, layouts that adapt to phones, a text alternative for every chart, and captions and a transcript for the walkthrough. Animations are reduced if your device asks for reduced motion.</p>
-      <p class="mb-0">Limited Google Analytics is on unless you turn it off. It records visits and interactions such as downloads, using cookies to distinguish visits. Page addresses are sent without query strings. Google Signals and advertising tracking are disabled. A notice on your first visit lets you keep analytics on or turn it off, and you can change your choice at any time through “Analytics preferences” in the footer. Turning analytics off stops measurement and removes this site’s analytics cookies. Your choice is stored on your device. There are no forms or patient data entry. See <a href="https://policies.google.com/privacy" rel="noopener">Google’s privacy policy</a>. The hosting provider, GitHub Pages, may process technical request information; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>.</p>
+      <p class="mb-0">Limited Google Analytics is on unless you turn it off. It records visits and interactions such as downloads, using cookies to distinguish visits. Page addresses are sent without query strings, except campaign tags beginning “utm_”, which show which link or post a visit came from. Google Signals and advertising tracking are disabled. A notice on your first visit lets you keep analytics on or turn it off, and you can change your choice at any time through “Analytics preferences” in the footer. Turning analytics off stops measurement and removes this site’s analytics cookies. Your choice is stored on your device. There are no forms or patient data entry. See <a href="https://policies.google.com/privacy" rel="noopener">Google’s privacy policy</a>. The hosting provider, GitHub Pages, may process technical request information; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>.</p>
     </div>
   </div>
 </section>

@@ -2,7 +2,7 @@
 import { DOMAINS, QDAT } from '../data/tool.mjs';
 import { fourHourClock, badge, ICONS, C } from '../art/scenes.mjs';
 
-const SITE_URL = 'amaclullich.github.io/ace-t';
+const SITE_URL = 'theace-t.com';
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const CITE = 'Adapted from Table 1 of Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026.';
 

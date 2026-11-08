@@ -12,7 +12,7 @@ const chapter = (n, kicker, id, inner) => `
 export default {
   key: 'story', path: 'story.html', title: "ACE-T development and early delirium care pilot evidence",
   description: "How nurses and doctors developed ACE-T in Edinburgh, Frankfurt and Stanford, with early pilot results, methods, authors and study limitations.",
-  modified: '2026-10-02',
+  modified: '2026-11-08',
   body: () => `
 <section class="page-hero">
   <div class="wrap page-hero-grid">

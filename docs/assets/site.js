@@ -40,8 +40,21 @@
     analytics_storage: 'denied', ad_storage: 'denied',
     ad_user_data: 'denied', ad_personalization: 'denied'
   });
-  function cleanUrl(value) {
-    try { var u = new URL(value); return u.origin + u.pathname; } catch (e) { return ''; }
+  // Drops query strings, except utm_ campaign tags on the page address, so
+  // visits from tagged social posts are attributed to the right platform.
+  function cleanUrl(value, keepCampaign) {
+    try {
+      var u = new URL(value);
+      var out = u.origin + u.pathname;
+      if (keepCampaign) {
+        var q = [];
+        u.searchParams.forEach(function (v, k) {
+          if (/^utm_(source|medium|campaign|content|term)$/.test(k)) q.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+        });
+        if (q.length) out += '?' + q.join('&');
+      }
+      return out;
+    } catch (e) { return ''; }
   }
   function removeCookies() {
     document.cookie.split(';').forEach(function (cookie) {
@@ -65,7 +78,7 @@
     window.gtag('js', new Date());
     window.gtag('config', id, {
       allow_google_signals: false, allow_ad_personalization_signals: false,
-      page_location: cleanUrl(location.href), page_referrer: cleanUrl(document.referrer)
+      page_location: cleanUrl(location.href, true), page_referrer: cleanUrl(document.referrer)
     });
     var tag = document.createElement('script');
     tag.async = true;

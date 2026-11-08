@@ -13,7 +13,7 @@ const examples = {
 export default {
   key: 'home', path: 'index.html', title: "ACE-T: a nursing tool for the first response to delirium",
   description: "ACE-T supports the initial nursing response to delirium. Download the free bedside form, follow the walkthrough and read the early pilot evidence.",
-  modified: '2026-10-02',
+  modified: '2026-11-08',
   body: () => `
 <section class="hero">
   <div class="wrap hero-grid">

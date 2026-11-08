@@ -7,7 +7,7 @@ const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 export default {
   key: 'tool', path: 'tool.html', title: "Using ACE-T for the initial nursing response to delirium",
   description: "Read the ACE-T bedside prompts for acute triggers, patient experience and treatment, with explanations of the initial nursing response to delirium.",
-  modified: '2026-10-02',
+  modified: '2026-11-08',
   body: () => `
 <section class="page-hero">
   <div class="wrap page-hero-grid">

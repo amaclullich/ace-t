@@ -5,7 +5,7 @@ export default {
   key: 'walkthrough', path: 'walkthrough.html', title: "ACE-T delirium care: narrated bedside walkthrough",
   scripts: ['walkthrough.js'],
   description: "A narrated walkthrough of ACE-T for the initial nursing response to delirium, with bedside examples, captions and a full transcript.",
-  modified: '2026-10-02',
+  modified: '2026-11-08',
   body: () => `
 <section class="page-hero" style="padding-bottom:24px">
   <div class="wrap">
