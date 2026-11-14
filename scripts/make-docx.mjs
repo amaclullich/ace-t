@@ -109,7 +109,7 @@ const doc = new Document({
   sections: [{
     properties: { page: { size: { width: 11906, height: 16838, orientation: PageOrientation.PORTRAIT }, margin: { top: 560, bottom: 700, left: 720, right: 720, footer: 280 } } },
     footers: { default: new Footer({ children: [para([
-      run('Adapted from Table 1 of Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026. ', { size: 12, color: '595959' }),
+      run('Adapted from Table 1 of Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. medRxiv 2026.11.08.26367532 (preprint). ', { size: 12, color: '595959' }),
       run('theace-t.com', { size: 12, bold: true, color: '000000' }),
     ])] }) },
     children: [

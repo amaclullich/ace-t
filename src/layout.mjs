@@ -8,7 +8,8 @@ export const SITE = {
   contact: 'a.maclullich@ed.ac.uk',
   profile: 'https://edwebprofiles.ed.ac.uk/profile/alasdair-maclullich',
   address: ['Ageing and Health, Usher Institute', 'Usher Building, The University of Edinburgh', '5-7 Little France Road, Edinburgh BioQuarter', 'Edinburgh EH16 4UX, UK'],
-  updated: '2026-11-08',
+  updated: '2026-11-14',
+  preprint: 'https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1',
 };
 
 export const NAV = [
@@ -28,7 +29,7 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'CreativeWork', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', alternateName: 'ACE-T', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html`, inLanguage: 'en-GB', isAccessibleForFree: true, keywords: 'delirium, nursing, 4AT, acute care, initial response', audience: { '@type': 'MedicalAudience', audienceType: 'Nurses' }, author: { '@id': ownerId } },
+      { '@type': 'CreativeWork', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', alternateName: 'ACE-T', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html`, inLanguage: 'en-GB', isAccessibleForFree: true, keywords: 'delirium, nursing, 4AT, acute care, initial response', audience: { '@type': 'MedicalAudience', audienceType: 'Nurses' }, author: { '@id': ownerId }, isBasedOn: SITE.preprint },
       { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich', email: SITE.contact,
         url: 'https://www.alasdairmaclullich.com/', jobTitle: 'Professor of Geriatric Medicine',
         affiliation: { '@type': 'Organization', name: 'University of Edinburgh' },
@@ -123,6 +124,7 @@ ${body}
           <li><a href="why-ace-t.html">Why ACE-T</a></li>
           <li><a href="story.html">How ACE-T was developed</a></li>
           <li><a href="about.html">About and citation</a></li>
+          <li><a href="${SITE.preprint}" rel="noopener">Preprint on medRxiv</a></li>
           <li><button class="analytics-preferences" type="button">Analytics preferences</button></li>
           <li><a href="https://www.the4at.com/" rel="noopener">The 4AT</a></li>
         </ul>

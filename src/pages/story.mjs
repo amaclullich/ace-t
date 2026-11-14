@@ -12,7 +12,7 @@ const chapter = (n, kicker, id, inner) => `
 export default {
   key: 'story', path: 'story.html', title: "ACE-T development and early delirium care pilot evidence",
   description: "How nurses and doctors developed ACE-T in Edinburgh, Frankfurt and Stanford, with early pilot results, methods, authors and study limitations.",
-  modified: '2026-11-08',
+  modified: '2026-11-14',
   body: () => `
 <section class="page-hero">
   <div class="wrap page-hero-grid">
@@ -40,7 +40,7 @@ export default {
         <dt><strong>Limits</strong></dt>
         <dd>The pilot did not establish improvements in patient outcomes or validate the four-hour target. It did not establish effects on workload or safety. Patients and carers were not involved in the initial development.</dd>
         <dt><strong>Source and status</strong></dt>
-        <dd>The development and pilot manuscript was submitted for publication in 2026. <a href="about.html#source">Full citation and publication status</a>.</dd>
+        <dd>The development and pilot paper is available as a <a href="https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1" rel="noopener">preprint on medRxiv</a>, posted on 9 November 2026. It has not yet been peer reviewed. <a href="about.html#source">Full citation and publication status</a>.</dd>
       </dl>
     </div>
   </div>
@@ -157,7 +157,7 @@ ${chapter(9, 'Next steps', 'next', `
       <li><strong>Staff review</strong><span>53 staff rate the provisional tool and suggest changes; the tool is revised before clinical use.</span></li>
       <li><strong>Summer 2025</strong><span>Baseline records reviewed at the three hospitals.</span></li>
       <li><strong>Autumn and winter 2025 to 2026</strong><span>ACE-T in use; records reviewed after introduction.</span></li>
-      <li><strong>2026</strong><span>Development and pilot paper submitted for publication.</span></li>
+      <li><strong>2026</strong><span>Development and pilot paper submitted for publication, and posted as a preprint on medRxiv in November.</span></li>
     </ol>`)}
 
 ${chapter(10, 'The team', 'team', `
@@ -172,7 +172,7 @@ ${chapter(10, 'The team', 'team', `
       <div class="person"><strong>Alasdair MacLullich, MB ChB, PhD</strong><span>Ageing and Health, Usher Institute, University of Edinburgh, UK</span></div>
     </div>
     <p class="mt-2">The authors thank the colleagues who took part in the survey and in introducing ACE-T at each site.</p>
-    <div class="cite"><strong>Source:</strong> Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026.</div>`)}
+    <div class="cite"><strong>Source:</strong> Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. medRxiv 2026.11.08.26367532 (preprint). <a href="https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1" rel="noopener">Read the preprint</a>.</div>`)}
   </div>
 </section>
 

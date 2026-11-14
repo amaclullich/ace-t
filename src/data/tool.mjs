@@ -1,5 +1,5 @@
 // Single source for the ACE-T prompts. Adapted from Table 1 of the ACE-T development and pilot
-// manuscript (Cours et al., submitted 2026), with the 4AT named as the default screening tool.
+// paper (Cours et al., medRxiv preprint 2026.11.08.26367532), with the 4AT named as the default screening tool.
 // "why" lines are short teaching rationales consistent with NICE CG103.
 
 export const DOMAINS = [
@@ -60,6 +60,7 @@ export const DOMAINS = [
       { t: 'Inform the family, where appropriate', form: 'Inform the family where appropriate',
         why: 'Families are often worried by sudden change in someone they know well. They can also tell you what is new.' },
       { t: 'Offer the delirium information leaflet to the patient and family, where appropriate', form: 'Provide the delirium information leaflet to the patient and family where appropriate',
+        link: { href: 'https://deliriumsupport.com/downloads/', label: 'Free printable leaflets for patients and families, from Delirium Support' },
         why: 'Written information helps people understand delirium and remember what they were told.' },
       { t: 'Discuss the treatment plan with the multidisciplinary team', form: 'Discuss the treatment plan with the multidisciplinary team',
         why: 'Agree who does what next. Delirium care continues beyond the first four hours.' },

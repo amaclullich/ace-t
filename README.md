@@ -12,7 +12,7 @@ Published at **https://amaclullich.github.io/ace-t/** with GitHub Pages, from `m
 | The tool | `tool.html` | All 22 prompts from Table 1, each with a short reason, the Quick Distress Assessment Tool, handover |
 | Walkthrough | `walkthrough.html` | Narrated animation (SVG and CSS, synced to the ElevenLabs narration), captions, chapters, clickable transcript |
 | Why ACE-T | `why-ace-t.html` | The gap after the screen, benefits for nurses, staff ratings, multidomain treatment, where the 4AT fits |
-| The story | `story.html` | How ACE-T was developed and piloted, told from the submitted paper, with site-level charts |
+| The story | `story.html` | How ACE-T was developed and piloted, told from the paper (medRxiv preprint), with site-level charts |
 | Downloads | `downloads.html` | Bedside form (PDF, A4 and US Letter), editable Word form (monochrome), poster (PDF and PNG) |
 | About | `about.html` | Source, citation, further reading, contact, accessibility and privacy |
 
@@ -29,7 +29,7 @@ npm run check          # links, anchors, headings, house-style words
 npm run serve          # local server with range requests, http://127.0.0.1:8123/
 ```
 
-- **Regenerating the downloads** (`npm run downloads`): the forms were laid out with Chromium 141 (Playwright 1.56) and Liberation Sans standing in for Helvetica. Other browser versions or fonts can push the bedside form onto a second page, and the script then stops. If that happens, use Playwright 1.56 and a fontconfig file that maps "Helvetica Neue" and "Helvetica" to Liberation Sans and "Georgia" to Liberation Serif (`FONTCONFIG_FILE=...`). `CHROME_PATH` points the script at a specific Chrome if needed. Check that the PDFs differ from the previous set only where you meant them to.
+- **Regenerating the downloads** (`npm run downloads`): the forms were laid out with Chromium 141 (Playwright 1.56) and Liberation Sans standing in for Helvetica. Other browser versions or fonts can push the bedside form onto a second page, and the script then stops. If that happens, use Playwright 1.56 and a fontconfig file that maps "Helvetica Neue" and "Helvetica" to Liberation Sans and "Georgia" to Liberation Serif (`FONTCONFIG_FILE=...`). `CHROME_PATH` points the script at a specific Chrome if needed. Check that the PDFs differ from the previous set only where you meant them to. On 14 November 2026 the set was rebuilt with Chrome 153 and `FONTCONFIG_FILE="$PWD/scripts/print-fonts.conf"` (the path must be absolute), which makes Liberation Sans and Liberation Serif the only fonts the browser can use; with that file each form stays on one page.
 - **Contact details** (email, University of Edinburgh profile, postal address) are set once in `SITE` in `src/layout.mjs` and used in the footer and on the About page.
 
 - **Clinical wording** lives in one place: `src/data/tool.mjs`. The tool page, bedside PDFs, Word form and poster are all generated from it. After changing it, run `npm run downloads` and then `npm run build`.
@@ -40,4 +40,4 @@ npm run serve          # local server with range requests, http://127.0.0.1:8123
 
 ## Source
 
-Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026. See `CONTENT-NOTES.md` before changing clinical content. The manuscript itself is not in this repository.
+Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. medRxiv 2026.11.08.26367532 (preprint). https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1 See `CONTENT-NOTES.md` before changing clinical content. The manuscript itself is not in this repository.

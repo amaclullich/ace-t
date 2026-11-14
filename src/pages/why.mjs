@@ -4,7 +4,7 @@ import { bars } from '../art/charts.mjs';
 export default {
   key: 'why', path: 'why-ace-t.html', title: "After a positive delirium screen: why ACE-T was developed",
   description: "Why ACE-T was developed to support early nursing care after a positive delirium screen, and how it relates to the 4AT and clinical assessment.",
-  modified: '2026-11-08',
+  modified: '2026-11-14',
   body: () => `
 <section class="page-hero">
   <div class="wrap">
@@ -37,6 +37,10 @@ export default {
         <p>A small pilot in Edinburgh, Frankfurt and Stanford assessed staff views and clinical documentation. Patient outcomes and the four-hour target have not been validated by that pilot. <a href="story.html#evidence-summary">Read the methods and limits of the evidence</a>.</p>
       </div>
     </div>
+    <div class="card mt-2" id="time-bundle">
+      <h3>ACE-T and the TIME bundle</h3>
+      <p class="mb-0">The first draft of ACE-T drew on the structure and content of the TIME bundle (Triggers, Investigations, Management and Engagement), which is described in <a href="https://www.sign.ac.uk/our-guidelines/risk-reduction-and-management-of-delirium/" rel="noopener">SIGN guideline 157</a>. TIME covers the response of the whole clinical team. ACE-T covers the nursing part of the first hours. A ward that uses TIME, or another local delirium pathway, can use ACE-T with it.</p>
+    </div>
   </div>
 </section>
 
@@ -50,7 +54,7 @@ export default {
     </div>
     <div class="card">
       <h2 style="font-size:1.6rem">Treatment advice varies</h2>
-      <p>The ACE-T manuscript’s review identified several labels for delirium treatment in guidelines:</p>
+      <p>The review in the ACE-T paper identified several labels for delirium treatment in guidelines:</p>
       <ul class="labels-list" aria-label="Labels used in guidelines">
         <li>multicomponent non-pharmacological interventions</li><li>a multicomponent program</li><li>non-drug strategies</li><li>established pathways of good care</li>
       </ul>
@@ -65,7 +69,7 @@ export default {
       <p class="eyebrow">Why nurses</p>
       <h2 id="nurses-h">Nurses are there when the screen is positive</h2>
       <p>In many health systems, nurses carry out most delirium screening. They can respond promptly to a positive screen and involve the rest of the team.</p>
-      <p>Nurses also carry much of the ongoing care of a person with delirium: managing interventions, monitoring distress, talking with families and keeping the person safe. Studies reviewed in the ACE-T manuscript reported gaps in escalation and action after positive screens, and in telling patients and families about the diagnosis. <a href="about.html#source">Source and publication status</a>.</p>
+      <p>Nurses also carry much of the ongoing care of a person with delirium: managing interventions, monitoring distress, talking with families and keeping the person safe. Studies reviewed in the ACE-T paper reported gaps in escalation and action after positive screens, and in telling patients and families about the diagnosis. <a href="about.html#source">Source and publication status</a>.</p>
       <p>ACE-T gives nurses a practical, shared starting point for those first hours. Medical assessment and the wider team’s work continue alongside it.</p>
     </div>
     <div class="card" style="padding:28px">

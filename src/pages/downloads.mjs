@@ -1,9 +1,10 @@
 import { icon } from '../art/icons.mjs';
+import { SITE } from '../layout.mjs';
 
 export default {
   key: 'downloads', path: 'downloads.html', title: "Download ACE-T: delirium nursing tool in PDF and Word",
   description: "Download the ACE-T delirium nursing tool in A4, US Letter and editable Word formats, plus a summary sheet, narration, transcript and captions.",
-  modified: '2026-11-08',
+  modified: '2026-11-14',
   body: ({ sizes }) => `
 <section class="page-hero">
   <div class="wrap">
@@ -50,9 +51,9 @@ export default {
 
     <div class="card mt-3" id="download-release">
       <h2 class="h-card">Download release and citation</h2>
-      <p><strong>Website download release: 8 November 2026.</strong> The bedside prompts follow Table 1 of the ACE-T development and pilot manuscript submitted for publication in 2026. The PDFs and editable Word file contain the same clinical prompts. This release date identifies the website download set.</p>
-      <p>For the tool’s development and early evidence, cite: Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. <em>Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems.</em> Submitted for publication, 2026.</p>
-      <p class="mb-0">For this download set, cite: MacLullich A. <em>ACE-T delirium nursing tool: website downloads.</em> Website release 8 November 2026. <a href="https://theace-t.com/downloads.html">theace-t.com/downloads.html</a>. Include the date you accessed the files. <a href="about.html#source">Sources and publication status</a>.</p>
+      <p><strong>Website download release: 14 November 2026.</strong> The bedside prompts follow Table 1 of the ACE-T development and pilot paper, which is available as a <a href="https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1" rel="noopener">preprint on medRxiv</a>. The PDFs and editable Word file contain the same clinical prompts. This release date identifies the website download set.</p>
+      <p>For the tool’s development and early evidence, cite: Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. <em>Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems.</em> medRxiv 2026.11.08.26367532 (preprint). doi: 10.64898/2026.11.08.26367532.</p>
+      <p class="mb-0">For this download set, cite: MacLullich A. <em>ACE-T delirium nursing tool: website downloads.</em> Website release 14 November 2026. <a href="https://theace-t.com/downloads.html">theace-t.com/downloads.html</a>. Include the date you accessed the files. <a href="about.html#source">Sources and publication status</a>.</p>
     </div>
 
     <div class="grid-2 mt-3">
@@ -70,6 +71,25 @@ export default {
         <p>ACE-T supports clinical judgement, local policy and the agreed treatment plan. If you adapt the Word version, keep the three domains and the four-hour target, and check the wording with your local delirium lead or practice educator.</p>
         <p class="muted mb-0">A completed form contains patient information. Store it in line with your organisation’s records policy. This website does not collect any patient data.</p>
       </div>
+    </div>
+
+    <div class="grid-2 mt-3">
+      <div class="card" id="family-leaflet">
+        <h2 class="h-card">Leaflet for patients and families</h2>
+        <p>The form prompts you to offer a delirium information leaflet. If your ward has no leaflet, Delirium Support has free printable ones in A4 and US Letter, including “What is delirium?”.</p>
+        <p class="mb-0"><a class="link-arrow" href="https://deliriumsupport.com/downloads/" rel="noopener">Printable leaflets from Delirium Support${icon('arrow')}</a></p>
+      </div>
+      <div class="card" id="tell-us">
+        <h2 class="h-card">Tell us you are using ACE-T</h2>
+        <p>If your ward or hospital is using or testing ACE-T, please tell us. It is optional and takes about a minute. You do not need to tell us before you use the form.</p>
+        <p>We use replies to learn where ACE-T is used and what should change, and to invite sites to share audit results. Please do not include patient information.</p>
+        <p class="mb-0"><a class="btn btn-secondary" href="mailto:${SITE.contact}?subject=Using%20ACE-T&amp;body=Hospital%20and%20country%3A%0AWard%20or%20unit%20type%3A%0APaper%20form%20or%20electronic%20record%3A%0ADate%20started%3A%0AContact%20name%20and%20work%20email%3A%0AWould%20you%20share%20audit%20totals%20later%3F%20(yes%20or%20no)%3A%0A%0APlease%20do%20not%20include%20patient%20information.">Email us about your site</a></p>
+      </div>
+    </div>
+
+    <div class="card mt-3" id="translations">
+      <h2 class="h-card">Translations</h2>
+      <p class="mb-0">ACE-T is in English at present. If you would like to translate it, please <a href="mailto:${SITE.contact}?subject=Translating%20ACE-T">write to us first</a>, so that we can list the translation here. Name the translator or team, keep the three domains and all 22 prompts, and describe any changes you make.</p>
     </div>
   </div>
 </section>

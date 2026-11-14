@@ -101,6 +101,15 @@
       panel.querySelector('[data-analytics="denied"]').focus();
     });
   });
+  // Counts clicks on the downloadable forms and walkthrough files as their own event,
+  // so the number of downloads can be read without relying on automatic link tracking.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var m = (a.getAttribute('href') || '').match(/(?:downloads|media)\/([^\/?#]+\.(?:pdf|docx|png|mp3|txt|vtt))$/i);
+    if (!m) return;
+    window.gtag('event', 'ace_t_download', { file_name: m[1], link_page: location.pathname });
+  });
   // On by default: analytics runs unless the visitor has turned it off.
   // The notice shows until the visitor makes a choice.
   apply(choice === 'denied' ? 'denied' : 'granted');

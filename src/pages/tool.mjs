@@ -7,7 +7,7 @@ const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 export default {
   key: 'tool', path: 'tool.html', title: "Using ACE-T for the initial nursing response to delirium",
   description: "Read the ACE-T bedside prompts for acute triggers, patient experience and treatment, with explanations of the initial nursing response to delirium.",
-  modified: '2026-11-08',
+  modified: '2026-11-14',
   body: () => `
 <section class="page-hero">
   <div class="wrap page-hero-grid">
@@ -61,7 +61,7 @@ export default {
         </div>
       </div>
       <ol class="items">
-        ${d.items.map(it => `<li class="item"><div><h3>${esc(it.t)}</h3>${it.d ? `<p>${esc(it.d)}</p>` : ''}<span class="why"><b>Why:</b> ${esc(it.why)}</span></div></li>`).join('')}
+        ${d.items.map(it => `<li class="item"><div><h3>${esc(it.t)}</h3>${it.d ? `<p>${esc(it.d)}</p>` : ''}${it.link ? `<p><a href="${it.link.href}" rel="noopener">${esc(it.link.label)}</a></p>` : ''}<span class="why"><b>Why:</b> ${esc(it.why)}</span></div></li>`).join('')}
       </ol>
       ${d.id === 'pe' ? qdatBlock() : ''}
     </section>`).join('')}
@@ -78,7 +78,7 @@ export default {
           <p>At handover, include the delirium or suspected delirium, the screening score, what has been done, and anything still outstanding or escalated.</p>
         </div>
       </div>
-      <p class="note">Adapted from Table 1 of the ACE-T development and pilot manuscript (Cours et al., submitted for publication 2026). The web version names the 4AT as the screening tool; ACE-T can be used after any locally used delirium screen. The “Why” lines are teaching notes for this website, consistent with NICE guideline CG103. <a href="about.html#source">Source and citation</a>.</p>
+      <p class="note">Adapted from Table 1 of the ACE-T development and pilot paper (<a href="https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1" rel="noopener">Cours et al., medRxiv preprint, 2026</a>). The web version names the 4AT as the screening tool; ACE-T can be used after any locally used delirium screen. The “Why” lines are teaching notes for this website, consistent with NICE guideline CG103. <a href="about.html#source">Source and citation</a>.</p>
     </section>
   </div>
 </section>

@@ -19,4 +19,4 @@ Related tool: the 4AT delirium assessment tool (https://www.the4at.com/)
 
 ## Evidence status
 
-ACE-T was developed and piloted across three health systems. The pilot results are reported site by site, with small non-random samples and no patient outcome measures, so they do not show effectiveness. The source is: Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. Submitted for publication, 2026.
+ACE-T was developed and piloted across three health systems. The pilot results are reported site by site, with small non-random samples and no patient outcome measures, so they do not show effectiveness. The source is: Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. medRxiv 2026.11.08.26367532 (preprint, not yet peer reviewed). https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1

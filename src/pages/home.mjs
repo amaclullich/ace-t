@@ -13,7 +13,7 @@ const examples = {
 export default {
   key: 'home', path: 'index.html', title: "ACE-T: a nursing tool for the first response to delirium",
   description: "ACE-T supports the initial nursing response to delirium. Download the free bedside form, follow the walkthrough and read the early pilot evidence.",
-  modified: '2026-11-08',
+  modified: '2026-11-14',
   body: () => `
 <section class="hero">
   <div class="wrap hero-grid">
@@ -148,7 +148,7 @@ export default {
       <div class="stat"><div class="stat-num">3 in 4</div><p><strong>staff rated ACE-T easy or very easy to use</strong> (39 of 52), and 41 of 53 rated its steps clear or very clear.</p></div>
       <div class="stat"><div class="stat-num">9–10 of 10</div><p><strong>reviewed records at each hospital documented delirium</strong> after ACE-T was introduced, compared with 0 to 3 of 10 before.</p></div>
     </div>
-    <p class="note">This was an early developmental pilot with small, non-random samples of records. It describes staff views and what was written in the notes. It did not measure patient outcomes. <a href="story.html#results">What the pilot found, and its limits</a>.</p>
+    <p class="note">This was an early developmental pilot with small, non-random samples of records. It describes staff views and what was written in the notes. It did not measure patient outcomes. <a href="story.html#results">What the pilot found, and its limits</a>. The paper is available as a <a href="https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1" rel="noopener">preprint on medRxiv</a>.</p>
   </div>
 </section>
 
@@ -159,6 +159,7 @@ export default {
       <p class="eyebrow">The story</p>
       <h2 id="story-h">How ACE-T came to be</h2>
       <p>Tools for detecting delirium are well established. What a nurse should do in the first hours after a positive screen has been much less clear. ACE-T began in Edinburgh as an attempt to write that response down, and grew into a collaboration between clinicians in the UK, Germany and the United States.</p>
+      <p>It was developed by Alexandra Cours, Johannes Trabert, Maggie Higgins, Umar Saleem, Elizabeth Sampson, Nannette Storr-Street and Alasdair MacLullich: nurses and doctors at Stanford, Frankfurt, Edinburgh and London. <a href="story.html#team">The authors and their hospitals</a>.</p>
       <a class="link-arrow" href="story.html">Read the story of ACE-T${icon('arrow')}</a>
     </div>
   </div>
