@@ -4,7 +4,7 @@ export const SITE = {
   name: 'ACE-T',
   tagline: 'The first steps in delirium care',
   base: (process.env.PUBLIC_BASE_URL || 'https://theace-t.com').replace(/\/$/, ''),
-  reviewed: 'September 2026',
+  reviewed: 'November 2026',
   contact: 'a.maclullich@ed.ac.uk',
   profile: 'https://edwebprofiles.ed.ac.uk/profile/alasdair-maclullich',
   address: ['Ageing and Health, Usher Institute', 'Usher Building, The University of Edinburgh', '5-7 Little France Road, Edinburgh BioQuarter', 'Edinburgh EH16 4UX, UK'],
@@ -143,7 +143,7 @@ ${body}
     </div>
     <div class="footer-base">
       <span>ACE-T version ${SITE.version} is free to use under <a href="about.html#licence">CC BY 4.0</a>. No permission is needed.</span>
-      <span>Content checked against the ACE-T manuscript, ${SITE.reviewed}.</span>
+      <span>Content checked against Table 1 of the ACE-T preprint, ${SITE.reviewed}.</span>
       <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Website page updated ${updatedLabel}.</span>
     </div>
   </div>

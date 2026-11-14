@@ -86,7 +86,7 @@ function domainTable(d) {
 function bottom() {
   const qd = [
     para(run('Quick Distress Assessment Tool (QDAT)', { bold: true, size: 16 })),
-    para([run('Observe the person and ask: ', { size: 14 }), run(QDAT.ask, { italics: true, size: 14 })], { before: 20, line: 210 }),
+    para([run('Observe the patient and ask: ', { size: 14 }), run(QDAT.ask, { italics: true, size: 14 })], { before: 20, line: 210 }),
     ...QDAT.levels.map(l => para([run(`${l.s}  `, { bold: true, size: 14 }), run(l.t, { size: 14 })], { before: 20, line: 210 })),
   ];
   const sgRows = ['Completed by', 'Role', 'Signature', 'Date and time completed'].map(l => new TableRow({ height: { value: 440, rule: 'atLeast' }, children: [new TableCell({

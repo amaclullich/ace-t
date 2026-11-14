@@ -90,7 +90,7 @@ function qdatBlock() {
       <div class="qdat" id="qdat">
         <p class="eyebrow" style="color:var(--pe)">Optional score</p>
         <h3>Quick Distress Assessment Tool (QDAT)</h3>
-        <p class="muted">Observe the person, then ask:</p>
+        <p class="muted">Observe the patient, then ask:</p>
         <p class="qdat-ask">${QDAT.ask}</p>
         <div class="qdat-scale">
           ${QDAT.levels.map(l => `<div class="qdat-level"><span class="qdat-score">${l.s}</span><p>${esc(l.t)}</p></div>`).join('')}

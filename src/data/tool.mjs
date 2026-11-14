@@ -39,7 +39,7 @@ export const DOMAINS = [
         why: 'Calm, clear explanation helps people make sense of their surroundings. Repeat it as often as needed.' },
       { t: 'Consider the patient’s environment', d: 'For example, whether a single room is needed.', form: 'Consider patient environment (for example, whether a single room is needed)',
         why: 'Noise, poor lighting and moves between wards or rooms can add to confusion.' },
-      { t: 'Make sure glasses, hearing aids and other communication aids are available', form: 'Ensure glasses, hearing aids and other communication aids are available',
+      { t: 'Make sure glasses, hearing aids and other necessary communication aids are available', form: 'Ensure glasses, hearing aids and other necessary communication aids are available',
         why: 'People are less disorientated when they can see and hear clearly. Check that aids work and are within reach.' },
       { t: 'Consider involving relatives, friends or carers', form: 'Consider involving relatives, friends or carers',
         why: 'People who know the patient can describe their usual self, offer familiar reassurance and help the team notice change.' },
@@ -74,7 +74,7 @@ export const QDAT = {
     { s: 0, t: 'Appears settled, lying or sitting comfortably, with no signs of pain or distress.' },
     { s: 1, t: 'Verbalises mild distress and/or appears mildly concerned or worried (for example, furrowed brow).' },
     { s: 2, t: 'Verbalises moderate distress and/or displays physical signs of distress (for example, restlessness).' },
-    { s: 3, t: 'Verbalises severe distress and/or is visibly in distress throughout the assessment, needing ongoing reassurance.' },
+    { s: 3, t: 'Verbalises severe distress and/or is visibly in distress throughout the assessment, requiring ongoing reassurance.' },
   ],
   source: 'Quick Distress Assessment Tool (QDAT), as described in the ACE-T manuscript; see McCartney H et al. Age Ageing 2025;54(6):afaf166.',
 };

@@ -87,7 +87,7 @@ export function bedsideFormHtml({ size = 'A4' } = {}) {
   <div class="bottom">
     <div class="qdat">
       <h4>Quick Distress Assessment Tool (QDAT)</h4>
-      Observe the person and ask: <i>${QDAT.ask}</i>
+      Observe the patient and ask: <i>${QDAT.ask}</i>
       <ol>${QDAT.levels.map(l => `<li><b>${l.s}</b><span>${esc(l.t)}</span></li>`).join('')}</ol>
     </div>
     <div class="sign">
