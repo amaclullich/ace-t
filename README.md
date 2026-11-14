@@ -38,6 +38,10 @@ npm run serve          # local server with range requests, http://127.0.0.1:8123
 - **Walkthrough timing** comes from word-level alignment of the narration (`src/data/walkthrough.json`). Each animated element is timed to a spoken phrase, so the build fails if the narration and the scene cues stop matching. The narration is `static/media/ace-t-walkthrough.mp3` (ElevenLabs, version B of the September 2026 teaching videos). If the narration is re-recorded, regenerate the word timings and captions and replace `walkthrough.json`.
 - Keep both the source and the generated `docs/` folder committed. GitHub Pages serves only `docs/`.
 
+## Licence
+
+ACE-T version 1.0 is free to use under CC BY 4.0. The wording is set once on the About page (`src/pages/about.mjs`, `#licence`) and repeated in `src/layout.mjs` (footer and structured data), `src/pages/downloads.mjs`, `src/print/forms.mjs` and `scripts/make-docx.mjs`.
+
 ## Source
 
 Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. medRxiv 2026.11.08.26367532 (preprint). https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1 See `CONTENT-NOTES.md` before changing clinical content. The manuscript itself is not in this repository.

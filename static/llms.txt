@@ -6,6 +6,8 @@ Canonical website: https://theace-t.com/
 Language: British English (en-GB)
 Maintained by: Professor Alasdair MacLullich, University of Edinburgh (https://www.alasdairmaclullich.com/)
 Related tool: the 4AT delirium assessment tool (https://www.the4at.com/)
+Version: 1.0 (November 2026)
+Licence: free to use, copy, adapt and translate under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). No permission, payment or registration is needed. Credit: ACE-T version 1.0 © 2026 Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. theace-t.com
 
 ## Pages
 

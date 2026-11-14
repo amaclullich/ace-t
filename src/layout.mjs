@@ -10,6 +10,8 @@ export const SITE = {
   address: ['Ageing and Health, Usher Institute', 'Usher Building, The University of Edinburgh', '5-7 Little France Road, Edinburgh BioQuarter', 'Edinburgh EH16 4UX, UK'],
   updated: '2026-11-14',
   preprint: 'https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1',
+  version: '1.0',
+  licence: 'https://creativecommons.org/licenses/by/4.0/',
 };
 
 export const NAV = [
@@ -29,7 +31,7 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'CreativeWork', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', alternateName: 'ACE-T', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html`, inLanguage: 'en-GB', isAccessibleForFree: true, keywords: 'delirium, nursing, 4AT, acute care, initial response', audience: { '@type': 'MedicalAudience', audienceType: 'Nurses' }, author: { '@id': ownerId }, isBasedOn: SITE.preprint },
+      { '@type': 'CreativeWork', '@id': `${SITE.base}/#ace-t`, name: 'ACE-T: initial nursing response to delirium', alternateName: 'ACE-T', description: 'A nursing tool covering Acute Triggers, Patient Experience and Treatment after delirium detection.', url: `${SITE.base}/tool.html`, inLanguage: 'en-GB', isAccessibleForFree: true, keywords: 'delirium, nursing, 4AT, acute care, initial response', audience: { '@type': 'MedicalAudience', audienceType: 'Nurses' }, author: { '@id': ownerId }, isBasedOn: SITE.preprint, version: SITE.version, license: SITE.licence, copyrightYear: 2026 },
       { '@type': 'Person', '@id': ownerId, name: 'Alasdair MacLullich', email: SITE.contact,
         url: 'https://www.alasdairmaclullich.com/', jobTitle: 'Professor of Geriatric Medicine',
         affiliation: { '@type': 'Organization', name: 'University of Edinburgh' },
@@ -55,7 +57,7 @@ export function layout({ key, title, description, path, body, scripts = [], ogIm
     for (const [file, name, encodingFormat] of documents) {
       schema['@graph'].push({ '@type': 'DigitalDocument', '@id': `${SITE.base}/downloads/${file}`, name,
         url: `${SITE.base}/downloads/${file}`, encodingFormat, inLanguage: 'en-GB',
-        about: { '@id': `${SITE.base}/#ace-t` }, publisher: { '@id': ownerId },
+        about: { '@id': `${SITE.base}/#ace-t` }, publisher: { '@id': ownerId }, license: SITE.licence,
         isPartOf: { '@id': `${url}#webpage` } });
     }
   }
@@ -140,6 +142,7 @@ ${body}
       </div>
     </div>
     <div class="footer-base">
+      <span>ACE-T version ${SITE.version} is free to use under <a href="about.html#licence">CC BY 4.0</a>. No permission is needed.</span>
       <span>Content checked against the ACE-T manuscript, ${SITE.reviewed}.</span>
       <span>Maintained by <a href="about.html#ownership">Alasdair MacLullich</a>. Website page updated ${updatedLabel}.</span>
     </div>

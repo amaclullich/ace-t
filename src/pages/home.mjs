@@ -27,7 +27,7 @@ export default {
       </div>
       <ul class="hero-meta">
         <li>${icon('clock')}Narrated walkthrough, under 5 minutes</li>
-        <li>${icon('file')}Free PDF and Word versions</li>
+        <li>${icon('file')}Free PDF and Word versions, with no permission needed</li>
         <li>${icon('pin')}Piloted in Edinburgh, Frankfurt and Stanford</li>
       </ul>
       <p class="note">Evidence is from an early development pilot. Its effect on patient outcomes has not been established. <a href="story.html#results">Read the results and limitations</a>.</p>
@@ -170,7 +170,7 @@ export default {
     <div class="band">
       <div>
         <h2 id="band-h">Take ACE-T to your ward</h2>
-        <p>Print the one-page bedside form, adapt the Word version to your local wording, or put the overview poster up in the staff area.</p>
+        <p>Print the one-page bedside form, adapt the Word version to your local wording, or put the overview poster up in the staff area. ACE-T is free to use under <a href="about.html#licence" style="color:#fff">CC BY 4.0</a>, and you do not need to ask.</p>
       </div>
       <div class="btn-row">
         <a class="btn btn-secondary" href="downloads/ACE-T-bedside-tool-A4.pdf" download>${icon('download')}PDF</a>

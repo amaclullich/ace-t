@@ -4,7 +4,7 @@ import { fourHourClock, badge, ICONS, C } from '../art/scenes.mjs';
 
 const SITE_URL = 'theace-t.com';
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-const CITE = 'Adapted from Table 1 of Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Development and pilot evaluation of ACE-T, a nurse-focused delirium initial-response tool, across three health systems. medRxiv 2026.11.08.26367532 (preprint).';
+const CITE = 'ACE-T version 1.0, November 2026. © 2026 Cours A, Trabert J, Higgins M, Saleem U, Sampson E, Storr-Street N, MacLullich A. Free to use, copy and adapt under the CC BY 4.0 licence. Source: medRxiv 2026.11.08.26367532 (preprint).';
 
 const baseCss = `
   * { box-sizing: border-box; }
