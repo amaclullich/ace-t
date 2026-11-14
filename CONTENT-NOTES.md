@@ -17,6 +17,17 @@ Reviewed 23 September 2026 against the manuscript for submission (7 September 20
 ## 14 November 2026
 
 - The paper is now a medRxiv preprint (posted 9 November 2026): medRxiv 2026.11.08.26367532, https://www.medrxiv.org/content/10.64898/2026.11.08.26367532v1. Citations on the site and on the forms were changed from "Submitted for publication, 2026" to the preprint.
-- The 22 prompts in `src/data/tool.mjs` were compared with Table 1 of the preprint. They match (9 Acute Triggers, 6 Patient Experience, 7 Treatment). The one known difference is deliberate: the site names the 4AT in "Document delirium ... and the 4AT (or local screening) score", where Table 1 says "the local screening score".
+- The 22 prompts in `src/data/tool.mjs` were compared with Table 1 of the preprint, read from the table image on medRxiv (T1.large.jpg). The number, order and meaning of the prompts are the same (9 Acute Triggers, 6 Patient Experience, 7 Treatment). The wording on the site differs from Table 1 in ten small ways. An earlier note here said there was one difference; that was wrong.
+  1. Table 1: "Observations (pulse, blood pressure, oxygen saturation, respiratory rate, temperature and conscious level)". Site: "Observations: pulse, blood pressure, oxygen saturation, respiratory rate, temperature, conscious level".
+  2. Table 1: "(e.g., urinalysis or wound check)". Site: "(for example, urinalysis or wound check)".
+  3. Table 1: "Assess pain (none / mild / moderate / severe)". Site: "Assess pain: none / mild / moderate / severe".
+  4. Table 1: "(e.g., whether a single room is needed)". Site: "(for example, whether a single room is needed)".
+  5. Table 1: "other necessary communication aids". Site: "other communication aids".
+  6. Table 1: "the local screening score". Site: "the 4AT (or local screening) score". This one is deliberate.
+  7. Site adds "Score: ____" after the QDAT prompt.
+  8. QDAT, Table 1 footnote: "verbalizes" and "requiring ongoing reassurance". Site: "Verbalises" and "needing ongoing reassurance".
+  9. QDAT, Table 1 footnote: "observe the patient and ask". Site: "Observe the person and ask".
+  10. Domain label, Table 1: "Treatment (Nursing)". Site: "Treatment · Nursing treatment and communication".
+  The Table 1 footnote says that local forms differed slightly in screening terminology and documentation format. Whether version 1.0 should keep the site wording or take the Table 1 wording for items 5, 8 and 9 is for the authors to decide.
 - Added: a link from the leaflet prompt to the printable family leaflets on deliriumsupport.com; a short account of how ACE-T relates to the TIME bundle (Why page), taken from the paper's Methods; an optional "Tell us you are using ACE-T" email link and a translations note (Downloads page); the authors' names on the home page; a count of form downloads in analytics (`ace_t_download` event).
 - Licence and version (added after the co-authors agreed): the form is ACE-T version 1.0 (November 2026), free to use under CC BY 4.0 with no permission needed. The statement is on the About page (#licence), the Downloads page, the footer of every page, the PDF and Word forms, the poster and llms.txt. Adapted versions say what changed and are called "adapted from ACE-T". Keep the prompts unchanged until a new version number is issued.
